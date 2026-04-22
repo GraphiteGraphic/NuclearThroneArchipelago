@@ -308,6 +308,6 @@ class NuclearThroneWorld(World):
                                             self.options.car_trap_weight.value])[0]
     
     def fill_slot_data(self) -> Dict[str, Any]:
-        return self.options.as_dict("death_link", "starting_character", "starting_weapon",
+        return self.options.as_dict("starting_character", "starting_weapon",
                                     "starting_secondary", "goal", "endurance_number", "anarchy_mode")
     

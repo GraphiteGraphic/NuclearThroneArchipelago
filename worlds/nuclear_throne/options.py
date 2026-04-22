@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 import random
 from typing import List
-from Options import (OptionGroup, Choice, DeathLinkMixin, Range, PerGameCommonOptions, Toggle, NamedRange)
+from Options import (OptionGroup, Choice, Range, PerGameCommonOptions, Toggle, NamedRange)
 
 
 class StartingCharacter(Choice):
@@ -329,7 +329,7 @@ class CarWreckTrapPercentage(Range):
 
 
 @dataclass
-class NuclearThroneOptions(PerGameCommonOptions, DeathLinkMixin):
+class NuclearThroneOptions(PerGameCommonOptions):
     starting_character: StartingCharacter
     starting_weapon: StartingWeapon
     starting_secondary: StartingSecondary
