@@ -229,7 +229,7 @@ class NuclearThroneWorld(World):
 
     def set_rules(self) -> None:
         rules.set_rules(self)
-        self.multiworld.completion_condition[self.player] = lambda state: state.has(names.win_con, self.player,
+        self.multiworld.completion_condition[self.player] = lambda state: state.has("VICTORY", self.player,
                                                                                      self.options.goal_number.value)
 
     def create_items(self) -> None:
