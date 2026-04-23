@@ -79,7 +79,8 @@ class NuclearThroneContext(CommonContext):
                 self.slot_data = args["slot_data"]
                 self.goal_number = self.slot_data["goal_number"]
                 logger.info("Starting Nuclear Throne proxy server")
-                self.http_task = asyncio.create_task(run_http_server(self, self.http_port), name="Nuclear Throne Proxy")
+                self.http_task = asyncio.create_task(run_http_server(self, self.http_port),
+                                                    name="Nuclear Throne Proxy")
             except:
                 logger.info("Error has occurred starting the proxy server")
         elif cmd == "ReceivedItems":
@@ -90,6 +91,8 @@ class NuclearThroneContext(CommonContext):
             for item in args["items"]:
                 self.awaiting_items.append(NetworkItem(*item).item)
                 self.full_inventory.append(NetworkItem(*item).item)
+                if NetworkItem(*item).item >= 5000:
+                    self.goal_complete += 1
         elif cmd == "Bounced":
             data = args.get("data", {})
             if "x" in data and "room" in data:
@@ -163,6 +166,10 @@ def create_http_app(ctx: NuclearThroneContext):
     
     @app.get("/getitems")
     async def getItems():
+        if ctx.goal_complete >= ctx.goal_number and not ctx.finished_game:
+            await ctx.send_msgs([{"cmd": "StatusUpdate", "status": ClientStatus.CLIENT_GOAL}])
+            ctx.finished_game = True
+    
         sending_items = deepcopy(ctx.awaiting_items)
         ctx.awaiting_items.clear()
         return sending_items
@@ -176,12 +183,6 @@ def create_http_app(ctx: NuclearThroneContext):
     @app.post("/location")
     async def sendLocationCheck(location_id: int):
         await ctx.check_locations([location_id])
-
-        if location_id >= 99900:
-            ctx.goal_complete += 1
-            if ctx.goal_complete >= ctx.goal_number:
-                await ctx.send_msgs([{"cmd": "StatusUpdate", "status": ClientStatus.CLIENT_GOAL}])
-                ctx.finished_game = True
 
         return {"received": location_id}
 
