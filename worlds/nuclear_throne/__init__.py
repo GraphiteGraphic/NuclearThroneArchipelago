@@ -229,7 +229,8 @@ class NuclearThroneWorld(World):
 
     def set_rules(self) -> None:
         rules.set_rules(self)
-        self.set_completion_rule(lambda state: state.has("VICTORY", self.player, self.options.goal_number.value))
+        self.multiworld.completion_condition[self.player] = lambda state: state.has(names.win_con, self.player,
+                                                                                     self.options.goal_number.value)
 
     def create_items(self) -> None:
         itempool = []
@@ -308,6 +309,6 @@ class NuclearThroneWorld(World):
                                             self.options.car_trap_weight.value])[0]
     
     def fill_slot_data(self) -> Dict[str, Any]:
-        return self.options.as_dict("starting_character", "starting_weapon",
-                                    "starting_secondary", "goal", "endurance_number", "anarchy_mode")
+        return self.options.as_dict("starting_character", "starting_weapon", "starting_secondary", 
+                                    "goal", "goal_number", "endurance_number", "anarchy_mode")
     

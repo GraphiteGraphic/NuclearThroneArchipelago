@@ -4,7 +4,7 @@ import Utils
 from copy import deepcopy
 from typing import List, Any, Optional
 from NetUtils import NetworkItem
-from CommonClient import CommonContext, gui_enabled, ClientCommandProcessor, logger, get_base_parser
+from CommonClient import CommonContext, gui_enabled, ClientCommandProcessor, logger, get_base_parser, ClientStatus
 
 DEBUG = False
 
@@ -13,7 +13,8 @@ class NuclearThroneCommandProcessor(ClientCommandProcessor):
         """Turn On Nuclear Throne Proxy HTTP Server"""
         logger.info("Starting Nuclear Throne proxy server")
         
-        self.ctx.http_task = asyncio.create_task(run_http_server(self.ctx, self.ctx.http_port), name="Nuclear Throne Proxy")
+        self.ctx.http_task = asyncio.create_task(run_http_server(self.ctx, self.ctx.http_port),
+                                                name="Nuclear Throne Proxy")
 
     def _cmd_end_proxy(self):
         """Turn Off Nuclear Throne Proxy HTTP Server"""
@@ -51,6 +52,8 @@ class NuclearThroneContext(CommonContext):
         self.awaiting_items: List[Any] = []
         self.deathlink_occurrence = False
         self.slot_data = None
+        self.goal_number = 1
+        self.goal_complete = 0
 
     async def server_auth(self, password_requested: bool = False):
         if password_requested and not self.password:
@@ -74,6 +77,7 @@ class NuclearThroneContext(CommonContext):
         if cmd == "Connected":
             try:
                 self.slot_data = args["slot_data"]
+                self.goal_number = self.slot_data["goal_number"]
                 logger.info("Starting Nuclear Throne proxy server")
                 self.http_task = asyncio.create_task(run_http_server(self, self.http_port), name="Nuclear Throne Proxy")
             except:
@@ -172,6 +176,12 @@ def create_http_app(ctx: NuclearThroneContext):
     @app.post("/location")
     async def sendLocationCheck(location_id: int):
         await ctx.check_locations([location_id])
+
+        if location_id >= 99900:
+            ctx.goal_complete += 1
+            if ctx.goal_complete >= ctx.goal_number:
+                await ctx.send_msgs([{"cmd": "StatusUpdate", "status": ClientStatus.CLIENT_GOAL}])
+                ctx.finished_game = True
 
         return {"received": location_id}
 
