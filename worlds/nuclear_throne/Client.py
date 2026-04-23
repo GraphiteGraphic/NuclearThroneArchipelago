@@ -161,6 +161,10 @@ def create_http_app(ctx: NuclearThroneContext):
 
     @app.get("/allitems")
     async def getAllItems():
+        if ctx.goal_complete >= ctx.goal_number and not ctx.finished_game:
+            await ctx.send_msgs([{"cmd": "StatusUpdate", "status": ClientStatus.CLIENT_GOAL}])
+            ctx.finished_game = True
+
         ctx.awaiting_items.clear()
         return ctx.full_inventory
     
