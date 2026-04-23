@@ -12,6 +12,11 @@
 5. After the version is installed, right-click on Nuclear Throne in your steam library and navigate to Manage > Browse local files.
 6. From the window that pops up, find the mods file or create one if it does not exist and extract the archipelago.mod zip folder into that folder.
 
+## Do I need to have every character already unlocked before I try this mod?
+Technically yes, you will need a NuclearThroneTogether.sav file with every playable character unlocked to play this archipelago. That's why .sav files are provided within the archipelago.mod zip folder, one with the bare minimum unlocked, and one with 100% unlocked. To utilize the save file complete the following:
+1. With Nuclear Throne Together installed, navigate to your NuclearThroneTogether.sav file (%LOCALAPPDATA%/nuclearthrone on Windows)
+2. Replace your .sav file with one of the provided NuclearThroneTogether.sav files
+
 
 ## Text Client Installation
 1. Download and install Archipelago (if you haven't done so already).
