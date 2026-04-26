@@ -69,12 +69,14 @@ class NuclearThroneWorld(World):
                     lvl_fmt = {level : locations.sewers_locations[level]}
                     region.add_locations(lvl_fmt, NuclearThroneLocation)
                     self.multiworld.get_region(f"{names.desert_03} - {required_items[0]}", 
-                                               self.player).connect(region, f"To {level}")
+                                               self.player).connect(region, f"To {level}",
+                        lambda state, items=items.mutations_goal_list: state.has_from_list(items, self.player, 1))
                 elif level in locations.scrapyard_01_locations:
                     lvl_fmt = {level : locations.scrapyard_01_locations[level]}
                     region.add_locations(lvl_fmt, NuclearThroneLocation)
                     self.multiworld.get_region(f"{names.sewers} - {required_items[0]}", 
-                                               self.player).connect(region, f"To {level}")
+                                               self.player).connect(region, f"To {level}",
+                        lambda state, items=items.weapons_tier_1: state.has_from_list(items, self.player, 7))
                 elif level in locations.scrapyard_02_locations:
                     lvl_fmt = {level : locations.scrapyard_02_locations[level]}
                     region.add_locations(lvl_fmt, NuclearThroneLocation)
@@ -89,12 +91,14 @@ class NuclearThroneWorld(World):
                     lvl_fmt = {level : locations.caves_locations[level]}
                     region.add_locations(lvl_fmt, NuclearThroneLocation)
                     self.multiworld.get_region(f"{names.scrapyard_03} - {required_items[0]}", 
-                                               self.player).connect(region, f"To {level}")
+                                               self.player).connect(region, f"To {level}",
+                        lambda state, items=items.mutations_goal_list: state.has_from_list(items, self.player, 2))
                 elif level in locations.frozencity_01_locations:
                     lvl_fmt = {level : locations.frozencity_01_locations[level]}
                     region.add_locations(lvl_fmt, NuclearThroneLocation)
                     self.multiworld.get_region(f"{names.caves} - {required_items[0]}", 
-                                               self.player).connect(region, f"To {level}")
+                                               self.player).connect(region, f"To {level}",
+                        lambda state, items=items.weapons_tier_2: state.has_from_list(items, self.player, 7))
                 elif level in locations.frozencity_02_locations:
                     lvl_fmt = {level : locations.frozencity_02_locations[level]}
                     region.add_locations(lvl_fmt, NuclearThroneLocation)
@@ -109,12 +113,14 @@ class NuclearThroneWorld(World):
                     lvl_fmt = {level : locations.labs_locations[level]}
                     region.add_locations(lvl_fmt, NuclearThroneLocation)
                     self.multiworld.get_region(f"{names.frozencity_03} - {required_items[0]}", 
-                                               self.player).connect(region, f"To {level}")
+                                               self.player).connect(region, f"To {level}",
+                        lambda state, items=items.mutations_goal_list: state.has_from_list(items, self.player, 4))
                 elif level in locations.palace_01_locations:
                     lvl_fmt = {level : locations.palace_01_locations[level]}
                     region.add_locations(lvl_fmt, NuclearThroneLocation)
                     self.multiworld.get_region(f"{names.labs} - {required_items[0]}", 
-                                               self.player).connect(region, f"To {level}")
+                                               self.player).connect(region, f"To {level}",
+                        lambda state, items=items.weapons_tier_3: state.has_from_list(items, self.player, 7))
                 elif level in locations.palace_02_locations:
                     lvl_fmt = {level : locations.palace_02_locations[level]}
                     region.add_locations(lvl_fmt, NuclearThroneLocation)
@@ -124,7 +130,8 @@ class NuclearThroneWorld(World):
                     lvl_fmt = {level : locations.palace_03_locations[level]}
                     region.add_locations(lvl_fmt, NuclearThroneLocation)
                     self.multiworld.get_region(f"{names.palace_02} - {required_items[0]}", 
-                                               self.player).connect(region, f"To {level}")
+                                               self.player).connect(region, f"To {level}",
+                        lambda state, items=items.weapons_sphere_4: state.has_from_list(items, self.player, 7))
                     if self.options.goal.value == 0 or self.options.goal.value == 3:
                         goal_id = items.character_item_table[required_items[0]].index + 99900
                         goal_name = f"GOAL - {required_items[0]}"
@@ -133,7 +140,8 @@ class NuclearThroneWorld(World):
                     lvl_fmt = {level : locations.campfire_locations[level]}
                     region.add_locations(lvl_fmt, NuclearThroneLocation)
                     self.multiworld.get_region(f"{names.palace_03} - {required_items[0]}", 
-                                               self.player).connect(region, f"To {level}")
+                                               self.player).connect(region, f"To {level}",
+                        lambda state, items=items.mutations_goal_list: state.has_from_list(items, self.player, 7))
                     if self.options.goal.value == 4:
                         goal_id = items.character_item_table[required_items[0]].index + 99900
                         goal_name = f"GOAL - {required_items[0]}"
@@ -142,7 +150,8 @@ class NuclearThroneWorld(World):
                     lvl_fmt = {level : locations.hq_01_locations[level]}
                     region.add_locations(lvl_fmt, NuclearThroneLocation)
                     self.multiworld.get_region(f"{names.campfire} - {required_items[0]}", 
-                                               self.player).connect(region, f"To {level}")
+                                               self.player).connect(region, f"To {level}",
+                        lambda state, items=items.mutations_goal_list: state.has_from_list(items, self.player, 7))
                 elif level in locations.hq_02_locations:
                     lvl_fmt = {level : locations.hq_02_locations[level]}
                     region.add_locations(lvl_fmt, NuclearThroneLocation)
@@ -161,9 +170,8 @@ class NuclearThroneWorld(World):
                     lvl_fmt = {level : locations.oasis_locations[level]}
                     region.add_locations(lvl_fmt, NuclearThroneLocation)
                     self.multiworld.get_region(f"{names.desert_01} - {required_items[0]}", self.player).connect(region,
-                                    f"Oasis Skip - {required_items[0]}")
-                    region.connect(self.multiworld.get_region(f"{names.desert_03} - {required_items[0]}", self.player),
-                                    f"Oasis Leave - {required_items[0]}")
+                                    f"Oasis Skip - {required_items[0]}",
+                        lambda state, items=items.weapons_tier_1: state.has_from_list(items, self.player, 7))
                 elif level in locations.pizzasewers_locations:
                     lvl_fmt = {level : locations.pizzasewers_locations[level]}
                     required_wep = [names.wep_grenade_launcher, names.wep_bazooka, names.wep_toxic_launcher]
@@ -178,8 +186,6 @@ class NuclearThroneWorld(World):
                     self.multiworld.get_region(f"{names.sewers} - {required_items[0]}", 
                                     self.player).connect(region, f"Pizza Sewers Enter - {required_items[0]}",
                                         lambda state, items=required_wep: state.has_any(items, self.player))
-                    region.connect(self.multiworld.get_region(f"{names.scrapyard_01} - {required_items[0]}",
-                                    self.player), f"Pizza Sewers Leave - {required_items[0]}")
                 elif level in locations.mansion_locations:
                     lvl_fmt = {level : locations.mansion_locations[level]}
                     required_wep = [names.wep_screwdriver]
@@ -190,41 +196,24 @@ class NuclearThroneWorld(World):
                     self.multiworld.get_region(f"{names.scrapyard_01} - {required_items[0]}", 
                                     self.player).connect(region, f"Mansion Enter - {required_items[0]}", 
                                         lambda state, items=required_wep: state.has_any(items, self.player))
-                    region.connect(self.multiworld.get_region(f"{names.scrapyard_03} - {required_items[0]}",
-                                    self.player), f"Mansion Leave - {required_items[0]}")
                 elif level in locations.cursedcaves_locations:
                     lvl_fmt = {level : locations.cursedcaves_locations[level]}
                     region.add_locations(lvl_fmt, NuclearThroneLocation)
                     self.multiworld.get_region(f"{names.scrapyard_03} - {required_items[0]}", 
-                                    self.player).connect(region, f"Cursed Cave Enter - {required_items[0]}")
-                    region.connect(self.multiworld.get_region(f"{names.frozencity_01} - {required_items[0]}",
-                                    self.player), f"Cursed Cave Leave - {required_items[0]}")
+                                    self.player).connect(region, f"Cursed Cave Enter - {required_items[0]}",
+                        lambda state, items=items.mutations_goal_list: state.has_from_list(items, self.player, 2))
                 elif level in locations.jungle_locations:
                     lvl_fmt = {level : locations.jungle_locations[level]}
                     region.add_locations(lvl_fmt, NuclearThroneLocation)
                     self.multiworld.get_region(f"{names.frozencity_01} - {required_items[0]}",
                                     self.player).connect(region, f"Jungle Enter - {required_items[0]}")
-                    region.connect(self.multiworld.get_region(f"{names.frozencity_03} - {required_items[0]}", 
-                                    self.player), f"Jungle Leave - {required_items[0]}")
                 elif level in locations.vault_locations:
                     lvl_fmt = {level : locations.vault_locations[level]}
                     region.add_locations(lvl_fmt, NuclearThroneLocation)
-                    self.multiworld.get_region(f"{names.desert_02} - {required_items[0]}", 
-                                    self.player).connect(region, f"DesertVault Enter - {required_items[0]}")
-                    region.connect(self.multiworld.get_region(f"{names.desert_03} - {required_items[0]}", 
-                                    self.player), f"DesertVault Leave - {required_items[0]}")
                     self.multiworld.get_region(f"{names.scrapyard_02} - {required_items[0]}", 
                                     self.player).connect(region,  f"ScrapVault Enter - {required_items[0]}")
-                    region.connect(self.multiworld.get_region(f"{names.scrapyard_03} - {required_items[0]}", 
-                                    self.player),  f"ScrapVault Leave - {required_items[0]}")
                     self.multiworld.get_region(f"{names.frozencity_02} - {required_items[0]}", 
                                     self.player).connect(region,   f"CityVault Enter - {required_items[0]}")
-                    region.connect(self.multiworld.get_region(f"{names.frozencity_03} - {required_items[0]}",
-                                    self.player),   f"CityVault Leave - {required_items[0]}")
-                    self.multiworld.get_region(f"{names.palace_02} - {required_items[0]}", 
-                                    self.player).connect(region, f"PalaceVault Enter - {required_items[0]}")
-                    region.connect(self.multiworld.get_region(f"{names.palace_03} - {required_items[0]}",
-                                    self.player), f"PalaceVault Leave - {required_items[0]}")
                 self.multiworld.regions.append(region)         
 
     def set_rules(self) -> None:

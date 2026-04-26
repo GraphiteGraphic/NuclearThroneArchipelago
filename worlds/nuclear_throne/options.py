@@ -122,7 +122,8 @@ class EnduranceNumber(Range):
 
 class AnarchyMode(Toggle):
     """
-    Enables weapons to spawn on any level
+    Ignore level restrictions for weapon spawns.
+    Runs with Robot start with Heavy Heart to compensate his passive ability.
     """
     display_name = "Anarchy Mode"
     default = False

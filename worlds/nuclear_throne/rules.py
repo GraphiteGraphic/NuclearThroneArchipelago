@@ -1,6 +1,6 @@
 from BaseClasses import ItemClassification
 from .items import NuclearThroneItem
-from . import names
+from . import names, items
 import typing, random
 
 if typing.TYPE_CHECKING:
@@ -34,8 +34,13 @@ def set_rules(world: "NuclearThroneWorld") -> None:
             goal_location = world.multiworld.get_location(f"GOAL - {names.char_cuz}", world.player)
             goal_location.place_locked_item(NuclearThroneItem("VICTORY", 
                                                               ItemClassification.progression, 5000, world.player))
+            world.set_rule(goal_location,
+                lambda state, items=items.mutations_goal_list: state.has_from_list(items, world.player, 7))
+
         else:          
             goal_location = world.multiworld.get_location(f"GOAL - {world.item_id_to_name[i]}",
                                                            world.player)
             goal_location.place_locked_item(NuclearThroneItem("VICTORY", ItemClassification.progression, 5000,
                                                                world.player))
+            world.set_rule(goal_location,
+                lambda state, items=items.mutations_goal_list: state.has_from_list(items, world.player, 7))
