@@ -10,21 +10,23 @@ from CommonClient import CommonContext, gui_enabled, ClientCommandProcessor, log
 class NuclearThroneCommandProcessor(ClientCommandProcessor):
     def _cmd_run_proxy(self):
         """Turn On Nuclear Throne Proxy HTTP Server"""
-        logger.info("Starting Nuclear Throne proxy server")
-
-        self.ctx.http_task = asyncio.create_task(
-            run_http_server(self.ctx, self.ctx.http_port),
-            name="Nuclear Throne Proxy"
-        )
+        try:
+            logger.info("Starting Nuclear Throne proxy server")
+            self.ctx.http_task = asyncio.create_task(
+                run_http_server(self.ctx, self.ctx.http_port),
+                name="Nuclear Throne Proxy"
+            )
+        except Exception as e:
+            logger.info(f"Error starting proxy server: {e}")
 
     def _cmd_end_proxy(self):
         """Turn Off Nuclear Throne Proxy HTTP Server"""
-        if self.ctx.http_server is not None:
+        try:
             logger.info("Stopping Nuclear Throne proxy server")
             asyncio.create_task(self.ctx.http_server.cleanup())
             self.ctx.http_server = None
-        else:
-            logger.info("Error: Server Not Found")
+        except Exception as e:
+            logger.info(f"Error stopping proxy server; {e}")
 
     async def _cmd_deathlink(self):
         """Toggles deathlink"""
@@ -68,10 +70,13 @@ class NuclearThroneContext(CommonContext):
         await super().connect(address)
 
     async def disconnect(self, allow_autoreconnect: bool = False):
-        if self.http_server is not None:
-            logger.info("Stopping proxy server")
-            await self.http_server.cleanup()
-            self.http_server = None
+        try:
+            if self.http_server is not None:
+                logger.info("Stopping proxy server")
+                await self.http_server.cleanup()
+                self.http_server = None
+        except Exception as e:
+            logger.info(f"Error stopping proxy server: {e}")
 
         await super().disconnect(allow_autoreconnect)
 
@@ -102,9 +107,8 @@ class NuclearThroneContext(CommonContext):
 
         elif cmd == "Bounced":
             data = args.get("data", {})
-            if "x" in data and "room" in data:
-                if data["player"] != self.slot and data["player"] is not None:
-                    self.deathlink_occurrence = True
+            if data["source"] != self.player_names[self.slot] and data["source"] is not None:
+                self.deathlink_occurrence = data["source"]
 
     def run_gui(self):
         from kvui import GameManager
@@ -175,7 +179,7 @@ def create_http_app(ctx: NuclearThroneContext):
 
     async def deathlink_get(request):
         trigger = ctx.deathlink_occurrence
-        ctx.deathlink_occurrence = False
+        ctx.deathlink_occurrence = None
         return web.json_response(trigger)
 
     async def location(request):
@@ -187,12 +191,12 @@ def create_http_app(ctx: NuclearThroneContext):
             except:
                 # Fallback: raw body
                 body = (await request.text()).strip()
-                location_id = int(body)
+                location_id = body
 
             if location_id is None:
                 raise ValueError("Missing location_id")
 
-            await ctx.check_locations([location_id])
+            await ctx.check_locations([int(location_id)])
             return web.json_response({"received": location_id})
 
         except Exception as e:
