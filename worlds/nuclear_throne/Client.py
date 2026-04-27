@@ -53,7 +53,7 @@ class NuclearThroneContext(CommonContext):
         self.room_info = None
         self.full_inventory: List[Any] = []
         self.awaiting_items: List[Any] = []
-        self.deathlink_occurrence = False
+        self.deathlink_occurrence = None
         self.slot_data = None
         self.goal_number = 1
         self.goal_complete = 0
@@ -106,8 +106,8 @@ class NuclearThroneContext(CommonContext):
                     self.goal_complete += 1
 
         elif cmd == "Bounced":
-            data = args.get("data", {})
-            if data["source"] != self.player_names[self.slot] and data["source"] is not None:
+            data = args.get("data", None)
+            if data is not None and data["source"] != self.player_names[self.slot]:
                 self.deathlink_occurrence = data["source"]
 
     def run_gui(self):
