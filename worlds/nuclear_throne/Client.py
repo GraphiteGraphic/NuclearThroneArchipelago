@@ -50,14 +50,12 @@ class NuclearThroneContext(CommonContext):
         self.http_server = None
         self.http_task = None
         self.items_handling = 0b111
-        self.room_info = None
         self.full_inventory: List[Any] = []
         self.awaiting_items: List[Any] = []
         self.deathlink_occurrence = None
         self.slot_data = None
         self.goal_number = 1
         self.goal_complete = 0
-        self.finished_game = False
 
     async def server_auth(self, password_requested: bool = False):
         if password_requested and not self.password:
@@ -78,6 +76,12 @@ class NuclearThroneContext(CommonContext):
         except Exception as e:
             logger.info(f"Error stopping proxy server: {e}")
 
+        self.full_inventory.clear()
+        self.awaiting_items.clear()
+        self.deathlink_occurrence = None
+        self.slot_data = None
+        self.goal_number = 1
+        self.goal_complete = 0
         await super().disconnect(allow_autoreconnect)
 
     def on_package(self, cmd: str, args: dict):
