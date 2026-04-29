@@ -787,6 +787,218 @@ goal_locations: Dict[str, int] = {
     f"GOAL - {names.char_cuz}" :      99916,
 }
 
+crown_locations_fish: Dict[str, int] = {
+    f"CROWN OF DEATH - {names.char_fish}" :      102,
+    f"CROWN OF LIFE - {names.char_fish}" :       103,
+    f"CROWN OF HASTE - {names.char_fish}" :      104,
+    f"CROWN OF GUNS - {names.char_fish}" :       105,
+    f"CROWN OF HATRED - {names.char_fish}" :     106,
+    f"CROWN OF BLOOD - {names.char_fish}" :      107,
+    f"CROWN OF DESTINY - {names.char_fish}" :    108,
+    f"CROWN OF LOVE - {names.char_fish}" :       109,
+    f"CROWN OF LUCK - {names.char_fish}" :       110,
+    f"CROWN OF CURSES - {names.char_fish}" :     111,
+    f"CROWN OF RISK - {names.char_fish}" :       112,
+    f"CROWN OF PROTECTION - {names.char_fish}" : 113,
+}
+
+crown_locations_crystal: Dict[str, int] = {
+    f"CROWN OF DEATH - {names.char_crystal}" :      202,
+    f"CROWN OF LIFE - {names.char_crystal}" :       203,
+    f"CROWN OF HASTE - {names.char_crystal}" :      204,
+    f"CROWN OF GUNS - {names.char_crystal}" :       205,
+    f"CROWN OF HATRED - {names.char_crystal}" :     206,
+    f"CROWN OF BLOOD - {names.char_crystal}" :      207,
+    f"CROWN OF DESTINY - {names.char_crystal}" :    208,
+    f"CROWN OF LOVE - {names.char_crystal}" :       209,
+    f"CROWN OF LUCK - {names.char_crystal}" :       210,
+    f"CROWN OF CURSES - {names.char_crystal}" :     211,
+    f"CROWN OF RISK - {names.char_crystal}" :       212,
+    f"CROWN OF PROTECTION - {names.char_crystal}" : 213,
+}
+
+crown_locations_eyes: Dict[str, int] = {
+    f"CROWN OF DEATH - {names.char_eyes}" :      302,
+    f"CROWN OF LIFE - {names.char_eyes}" :       303,
+    f"CROWN OF HASTE - {names.char_eyes}" :      304,
+    f"CROWN OF GUNS - {names.char_eyes}" :       305,
+    f"CROWN OF HATRED - {names.char_eyes}" :     306,
+    f"CROWN OF BLOOD - {names.char_eyes}" :      307,
+    f"CROWN OF DESTINY - {names.char_eyes}" :    308,
+    f"CROWN OF LOVE - {names.char_eyes}" :       309,
+    f"CROWN OF LUCK - {names.char_eyes}" :       310,
+    f"CROWN OF CURSES - {names.char_eyes}" :     311,
+    f"CROWN OF RISK - {names.char_eyes}" :       312,
+    f"CROWN OF PROTECTION - {names.char_eyes}" : 313,
+}
+
+crown_locations_melting: Dict[str, int] = {
+    f"CROWN OF DEATH - {names.char_melting}" :      402,
+    f"CROWN OF LIFE - {names.char_melting}" :       403,
+    f"CROWN OF HASTE - {names.char_melting}" :      404,
+    f"CROWN OF GUNS - {names.char_melting}" :       405,
+    f"CROWN OF HATRED - {names.char_melting}" :     406,
+    f"CROWN OF BLOOD - {names.char_melting}" :      407,
+    f"CROWN OF DESTINY - {names.char_melting}" :    408,
+    f"CROWN OF LOVE - {names.char_melting}" :       409,
+    f"CROWN OF LUCK - {names.char_melting}" :       410,
+    f"CROWN OF CURSES - {names.char_melting}" :     411,
+    f"CROWN OF RISK - {names.char_melting}" :       412,
+    f"CROWN OF PROTECTION - {names.char_melting}" : 413,
+}
+
+crown_locations_plant: Dict[str, int] = {
+    f"CROWN OF DEATH - {names.char_plant}" :      502,
+    f"CROWN OF LIFE - {names.char_plant}" :       503,
+    f"CROWN OF HASTE - {names.char_plant}" :      504,
+    f"CROWN OF GUNS - {names.char_plant}" :       505,
+    f"CROWN OF HATRED - {names.char_plant}" :     506,
+    f"CROWN OF BLOOD - {names.char_plant}" :      507,
+    f"CROWN OF DESTINY - {names.char_plant}" :    508,
+    f"CROWN OF LOVE - {names.char_plant}" :       509,
+    f"CROWN OF LUCK - {names.char_plant}" :       510,
+    f"CROWN OF CURSES - {names.char_plant}" :     511,
+    f"CROWN OF RISK - {names.char_plant}" :       512,
+    f"CROWN OF PROTECTION - {names.char_plant}" : 513,
+}
+
+crown_locations_yv: Dict[str, int] = {
+    f"CROWN OF DEATH - {names.char_yv}" :      602,
+    f"CROWN OF LIFE - {names.char_yv}" :       603,
+    f"CROWN OF HASTE - {names.char_yv}" :      604,
+    f"CROWN OF GUNS - {names.char_yv}" :       605,
+    f"CROWN OF HATRED - {names.char_yv}" :     606,
+    f"CROWN OF BLOOD - {names.char_yv}" :      607,
+    f"CROWN OF DESTINY - {names.char_yv}" :    608,
+    f"CROWN OF LOVE - {names.char_yv}" :       609,
+    f"CROWN OF LUCK - {names.char_yv}" :       610,
+    f"CROWN OF CURSES - {names.char_yv}" :     611,
+    f"CROWN OF RISK - {names.char_yv}" :       612,
+    f"CROWN OF PROTECTION - {names.char_yv}" : 613,
+}
+
+crown_locations_steroids: Dict[str, int] = {
+    f"CROWN OF DEATH - {names.char_steroids}" :      702,
+    f"CROWN OF LIFE - {names.char_steroids}" :       703,
+    f"CROWN OF HASTE - {names.char_steroids}" :      704,
+    f"CROWN OF GUNS - {names.char_steroids}" :       705,
+    f"CROWN OF HATRED - {names.char_steroids}" :     706,
+    f"CROWN OF BLOOD - {names.char_steroids}" :      707,
+    f"CROWN OF DESTINY - {names.char_steroids}" :    708,
+    f"CROWN OF LOVE - {names.char_steroids}" :       709,
+    f"CROWN OF LUCK - {names.char_steroids}" :       710,
+    f"CROWN OF CURSES - {names.char_steroids}" :     711,
+    f"CROWN OF RISK - {names.char_steroids}" :       712,
+    f"CROWN OF PROTECTION - {names.char_steroids}" : 713,
+}
+
+crown_locations_robot: Dict[str, int] = {
+    f"CROWN OF DEATH - {names.char_robot}" :      802,
+    f"CROWN OF LIFE - {names.char_robot}" :       803,
+    f"CROWN OF HASTE - {names.char_robot}" :      804,
+    f"CROWN OF GUNS - {names.char_robot}" :       805,
+    f"CROWN OF HATRED - {names.char_robot}" :     806,
+    f"CROWN OF BLOOD - {names.char_robot}" :      807,
+    f"CROWN OF DESTINY - {names.char_robot}" :    808,
+    f"CROWN OF LOVE - {names.char_robot}" :       809,
+    f"CROWN OF LUCK - {names.char_robot}" :       810,
+    f"CROWN OF CURSES - {names.char_robot}" :     811,
+    f"CROWN OF RISK - {names.char_robot}" :       812,
+    f"CROWN OF PROTECTION - {names.char_robot}" : 813,
+}
+
+crown_locations_chicken: Dict[str, int] = {
+    f"CROWN OF DEATH - {names.char_chicken}" :      902,
+    f"CROWN OF LIFE - {names.char_chicken}" :       903,
+    f"CROWN OF HASTE - {names.char_chicken}" :      904,
+    f"CROWN OF GUNS - {names.char_chicken}" :       905,
+    f"CROWN OF HATRED - {names.char_chicken}" :     906,
+    f"CROWN OF BLOOD - {names.char_chicken}" :      907,
+    f"CROWN OF DESTINY - {names.char_chicken}" :    908,
+    f"CROWN OF LOVE - {names.char_chicken}" :       909,
+    f"CROWN OF LUCK - {names.char_chicken}" :       910,
+    f"CROWN OF CURSES - {names.char_chicken}" :     911,
+    f"CROWN OF RISK - {names.char_chicken}" :       912,
+    f"CROWN OF PROTECTION - {names.char_chicken}" : 913,
+}
+
+crown_locations_rebel: Dict[str, int] = {
+    f"CROWN OF DEATH - {names.char_rebel}" :      1002,
+    f"CROWN OF LIFE - {names.char_rebel}" :       1003,
+    f"CROWN OF HASTE - {names.char_rebel}" :      1004,
+    f"CROWN OF GUNS - {names.char_rebel}" :       1005,
+    f"CROWN OF HATRED - {names.char_rebel}" :     1006,
+    f"CROWN OF BLOOD - {names.char_rebel}" :      1007,
+    f"CROWN OF DESTINY - {names.char_rebel}" :    1008,
+    f"CROWN OF LOVE - {names.char_rebel}" :       1009,
+    f"CROWN OF LUCK - {names.char_rebel}" :       1010,
+    f"CROWN OF CURSES - {names.char_rebel}" :     1011,
+    f"CROWN OF RISK - {names.char_rebel}" :       1012,
+    f"CROWN OF PROTECTION - {names.char_rebel}" : 1013,
+}
+
+crown_locations_horror: Dict[str, int] = {
+    f"CROWN OF DEATH - {names.char_horror}" :      1102,
+    f"CROWN OF LIFE - {names.char_horror}" :       1103,
+    f"CROWN OF HASTE - {names.char_horror}" :      1104,
+    f"CROWN OF GUNS - {names.char_horror}" :       1105,
+    f"CROWN OF HATRED - {names.char_horror}" :     1106,
+    f"CROWN OF BLOOD - {names.char_horror}" :      1107,
+    f"CROWN OF DESTINY - {names.char_horror}" :    1108,
+    f"CROWN OF LOVE - {names.char_horror}" :       1109,
+    f"CROWN OF LUCK - {names.char_horror}" :       1110,
+    f"CROWN OF CURSES - {names.char_horror}" :     1111,
+    f"CROWN OF RISK - {names.char_horror}" :       1112,
+    f"CROWN OF PROTECTION - {names.char_horror}" : 1113,
+}
+
+crown_locations_rogue: Dict[str, int] = {
+    f"CROWN OF DEATH - {names.char_rogue}" :      1202,
+    f"CROWN OF LIFE - {names.char_rogue}" :       1203,
+    f"CROWN OF HASTE - {names.char_rogue}" :      1204,
+    f"CROWN OF GUNS - {names.char_rogue}" :       1205,
+    f"CROWN OF HATRED - {names.char_rogue}" :     1206,
+    f"CROWN OF BLOOD - {names.char_rogue}" :      1207,
+    f"CROWN OF DESTINY - {names.char_rogue}" :    1208,
+    f"CROWN OF LOVE - {names.char_rogue}" :       1209,
+    f"CROWN OF LUCK - {names.char_rogue}" :       1210,
+    f"CROWN OF CURSES - {names.char_rogue}" :     1211,
+    f"CROWN OF RISK - {names.char_rogue}" :       1212,
+    f"CROWN OF PROTECTION - {names.char_rogue}" : 1213,
+}
+
+crown_locations_cuz: Dict[str, int] = {
+    f"CROWN OF DEATH - {names.char_cuz}" :      1602,
+    f"CROWN OF LIFE - {names.char_cuz}" :       1603,
+    f"CROWN OF HASTE - {names.char_cuz}" :      1604,
+    f"CROWN OF GUNS - {names.char_cuz}" :       1605,
+    f"CROWN OF HATRED - {names.char_cuz}" :     1606,
+    f"CROWN OF BLOOD - {names.char_cuz}" :      1607,
+    f"CROWN OF DESTINY - {names.char_cuz}" :    1608,
+    f"CROWN OF LOVE - {names.char_cuz}" :       1609,
+    f"CROWN OF LUCK - {names.char_cuz}" :       1610,
+    f"CROWN OF CURSES - {names.char_cuz}" :     1611,
+    f"CROWN OF RISK - {names.char_cuz}" :       1612,
+    f"CROWN OF PROTECTION - {names.char_cuz}" : 1613,
+}
+
+crown_location_table: Dict[str, int] = {
+    **crown_locations_fish,
+    **crown_locations_crystal,
+    **crown_locations_eyes,
+    **crown_locations_melting,
+    **crown_locations_plant,
+    **crown_locations_yv,
+    **crown_locations_steroids,
+    **crown_locations_robot,
+    **crown_locations_chicken,
+    **crown_locations_rebel,
+    **crown_locations_horror,
+    **crown_locations_rogue,
+    **crown_locations_cuz,
+}
+
+
 location_table: Dict[str, int] = {
     **fish_locations,
     **crystal_locations,
@@ -817,7 +1029,8 @@ location_lookup_table: Dict[str, int] = {
     **horror_locations,
     **rogue_locations,
     **cuz_locations,
-    **goal_locations
+    **goal_locations,
+    **crown_location_table
 }
 
 lookup_location_to_id = {location: idx for location, idx in location_lookup_table.items() if idx is not None}

@@ -8,7 +8,7 @@ if typing.TYPE_CHECKING:
 
 
 def set_rules(world: "NuclearThroneWorld") -> None:
-    
+
     if world.options.starting_weapon.value == -1:
         weps = [3,4,5,6,7,17,19,21,27]
         world.options.starting_weapon.value = weps[random.randint(0, 8)]

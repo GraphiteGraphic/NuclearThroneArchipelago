@@ -21,3 +21,19 @@ nuclearthrone_runs: Dict[str, Tuple[Tuple[str, ...], Dict[str, int]]] = {
     names.char_rogue:    ((names.char_rogue,),    locations.rogue_locations),
     names.char_cuz:      ((names.char_cuz,),      locations.cuz_locations)
 }
+
+crown_runs: Dict[str, Dict[str, int]] = {
+    names.char_fish:     locations.crown_locations_fish,
+    names.char_crystal:  locations.crown_locations_crystal,
+    names.char_eyes:     locations.crown_locations_eyes,
+    names.char_melting:  locations.crown_locations_melting,
+    names.char_plant:    locations.crown_locations_plant,
+    names.char_yv:       locations.crown_locations_yv,
+    names.char_steroids: locations.crown_locations_steroids,
+    names.char_robot:    locations.crown_locations_robot,
+    names.char_chicken:  locations.crown_locations_chicken,
+    names.char_rebel:    locations.crown_locations_rebel,
+    names.char_horror:   locations.crown_locations_horror,
+    names.char_rogue:    locations.crown_locations_rogue,
+    names.char_cuz:      locations.crown_locations_cuz
+}

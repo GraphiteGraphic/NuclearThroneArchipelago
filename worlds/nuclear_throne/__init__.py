@@ -4,7 +4,7 @@ from BaseClasses import ItemClassification
 
 from . import items, locations, rules, web_world, names
 from .locations import NuclearThroneLocation
-from .regions import NuclearThroneRegion, nuclearthrone_runs
+from .regions import NuclearThroneRegion, nuclearthrone_runs, crown_runs
 from . import options as nuclearthrone_options
 from typing import Dict, Any
 import math
@@ -131,11 +131,13 @@ class NuclearThroneWorld(World):
                     region.add_locations(lvl_fmt, NuclearThroneLocation)
                     self.multiworld.get_region(f"{names.palace_02} - {required_items[0]}", 
                                                self.player).connect(region, f"To {level}",
-                        lambda state, items=items.weapons_sphere_4: state.has_from_list(items, self.player, 7))
+                        lambda state, items=items.weapons_tier_4: state.has_from_list(items, self.player, 7))
                     if self.options.goal.value == 0 or self.options.goal.value == 3:
                         goal_id = items.character_item_table[required_items[0]].index + 99900
                         goal_name = f"GOAL - {required_items[0]}"
                         region.add_locations({goal_name : goal_id}, NuclearThroneLocation)
+                    if self.options.crownsanity.value:
+                        region.add_locations(crown_runs[required_items[0]], NuclearThroneLocation)
                 elif level in locations.campfire_locations:
                     lvl_fmt = {level : locations.campfire_locations[level]}
                     region.add_locations(lvl_fmt, NuclearThroneLocation)
@@ -239,6 +241,8 @@ class NuclearThroneWorld(World):
         itempool.extend([self.create_item(name) for name in items.weapon_item_table])
 
         filler_items = len(locations.location_table) - len(itempool)
+        if self.options.crownsanity:
+            filler_items += len(locations.crown_location_table)
         trap_amount = math.floor(filler_items * (self.options.trap_percentage / 100.0))
 
         filler_items -= trap_amount
@@ -299,5 +303,5 @@ class NuclearThroneWorld(World):
     
     def fill_slot_data(self) -> Dict[str, Any]:
         return self.options.as_dict("starting_character", "starting_weapon", "starting_secondary", 
-                                    "goal", "goal_number", "endurance_number", "anarchy_mode")
+                                    "goal", "goal_number", "endurance_number", "anarchy_mode", "crownsanity")
     

@@ -282,7 +282,7 @@ weapons_tier_3 = [
     names.wep_lightning_cannon
 ]
 
-weapons_sphere_4 = [
+weapons_tier_4 = [
     names.wep_double_minigun,
     names.wep_hyper_launcher,
     names.wep_auto_grenade_shotgun,

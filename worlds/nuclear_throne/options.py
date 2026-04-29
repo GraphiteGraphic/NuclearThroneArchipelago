@@ -129,6 +129,15 @@ class AnarchyMode(Toggle):
     default = False
 
 
+class CrownSanity(Toggle):
+    """
+    Completing a loop with a crown equipped become location checks.
+    Starting with a crown already unlocked does NOT automatically complete the check.
+    """
+    display_name = "CrownSanity"
+    default = False
+
+
 class TrapPercentage(Range):
     """
     Percentage of filler items to be converted to trap items
@@ -338,6 +347,7 @@ class NuclearThroneOptions(PerGameCommonOptions):
     goal_number: GoalNumber
     endurance_number: EnduranceNumber
     anarchy_mode: AnarchyMode
+    crownsanity: CrownSanity
     trap_percentage: TrapPercentage
     drop_trap_weight: DropTrapPercentage
     eat_trap_weight: EatTrapPercentage
@@ -361,7 +371,7 @@ class NuclearThroneOptions(PerGameCommonOptions):
 
 nuclearthrone_option_groups: List[OptionGroup] = [
     OptionGroup("Goal Options", [Goal, GoalNumber, EnduranceNumber]),
-    OptionGroup("World Options", [StartingCharacter, StartingWeapon, StartingSecondary, AnarchyMode,]),
+    OptionGroup("World Options", [StartingCharacter, StartingWeapon, StartingSecondary, AnarchyMode, CrownSanity]),
     OptionGroup("Trap Options", [TrapPercentage, DropTrapPercentage, CurseTrapPercentage, EatTrapPercentage,
                                 BigDogTrapPercentage, FrogTrapPercentage, HorrorTrapPercentage,
                                 MaggotTrapPercentage, PopoTrapPercentage, SkeletonTrapPercentage,
