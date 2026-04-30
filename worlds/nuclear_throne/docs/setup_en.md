@@ -13,7 +13,7 @@
 6. From the window that pops up, find the mods folder or create one if it does not exist and extract the archipelago.mod zip folder into that folder.
 
 ## Do I need to have every character already unlocked before I try this mod?
-Technically yes, you will need a NuclearThroneTogether.sav file with every playable character unlocked to play this archipelago. That's why .sav files are provided within the archipelago.mod zip folder, one with the bare minimum unlocked, and one with 100% unlocked. To utilize the save file complete the following:
+Yes, you will at the bare minimum need a NuclearThroneTogether.sav file with every playable character unlocked to play this archipelago. That's why .sav files are provided within the archipelago.mod zip folder with each character unlocked. Some files provided also have additional content unlocked including Skins and Crowns. To utilize the save file complete the following:
 1. With Nuclear Throne Together installed, navigate to your NuclearThroneTogether.sav file (%LOCALAPPDATA%/nuclearthrone on Windows)
 2. Replace your .sav file with one of the provided NuclearThroneTogether.sav files
 
