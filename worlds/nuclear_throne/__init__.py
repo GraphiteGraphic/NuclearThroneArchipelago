@@ -4,7 +4,7 @@ from BaseClasses import ItemClassification
 
 from . import items, locations, rules, web_world, names
 from .locations import NuclearThroneLocation
-from .regions import NuclearThroneRegion, nuclearthrone_runs, crown_runs
+from .regions import NuclearThroneRegion, nuclearthrone_runs, crown_runs, skin_runs
 from . import options as nuclearthrone_options
 from typing import Dict, Any
 import math
@@ -148,6 +148,8 @@ class NuclearThroneWorld(World):
                         goal_id = items.character_item_table[required_items[0]].index + 99900
                         goal_name = f"GOAL - {required_items[0]}"
                         region.add_locations({goal_name : goal_id}, NuclearThroneLocation)
+                    if self.options.skinsanity.value:
+                        region.add_locations(skin_runs[required_items[0]], NuclearThroneLocation)
                 elif level in locations.hq_01_locations:
                     lvl_fmt = {level : locations.hq_01_locations[level]}
                     region.add_locations(lvl_fmt, NuclearThroneLocation)
@@ -243,6 +245,8 @@ class NuclearThroneWorld(World):
         filler_items = len(locations.location_table) - len(itempool)
         if self.options.crownsanity:
             filler_items += len(locations.crown_location_table)
+        if self.options.skinsanity:
+            filler_items += len(locations.skin_location_table)
         trap_amount = math.floor(filler_items * (self.options.trap_percentage / 100.0))
 
         filler_items -= trap_amount
@@ -299,9 +303,10 @@ class NuclearThroneWorld(World):
                                             self.options.crown_trap_weight.value,
                                             self.options.empty_clip_trap_weight.value,
                                             self.options.nuke_trap_weight.value,
-                                            self.options.car_trap_weight.value])[0]
+                                            self.options.car_trap_weight.value,
+                                            self.options.dark_trap_weight.value])[0]
     
     def fill_slot_data(self) -> Dict[str, Any]:
-        return self.options.as_dict("starting_character", "starting_weapon", "starting_secondary", 
+        return self.options.as_dict("starting_character", "starting_weapon", "starting_secondary", "skinsanity",
                                     "goal", "goal_number", "endurance_number", "anarchy_mode", "crownsanity")
     

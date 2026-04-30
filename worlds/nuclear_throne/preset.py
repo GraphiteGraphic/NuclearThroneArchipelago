@@ -37,6 +37,7 @@ random = {
     "empty_clip_trap_weight": "random",
     "nuke_trap_weight": "random",
     "car_trap_weight": "random",
+    "dark_trap_weight": "random",
 }
 
 nuclearthrone_options_presets: Dict[str, Dict[str, Any]] = {

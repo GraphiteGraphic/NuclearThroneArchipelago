@@ -982,6 +982,87 @@ crown_locations_cuz: Dict[str, int] = {
     f"CROWN OF PROTECTION - {names.char_cuz}" : 1613,
 }
 
+skin_locations_fish: Dict[str, int] = {
+    f"B SKIN - {names.char_fish}" :     7701,
+    f"C SKIN - {names.char_fish}" :     7801,
+}
+
+skin_locations_crystal: Dict[str, int] = {
+    f"B SKIN - {names.char_crystal}" :  7702,
+    f"C SKIN - {names.char_crystal}" :  7802,
+}
+
+skin_locations_eyes: Dict[str, int] = {
+    f"B SKIN - {names.char_eyes}" :     7703,
+    f"C SKIN - {names.char_eyes}" :     7803,
+}
+
+skin_locations_melting: Dict[str, int] = {
+    f"B SKIN - {names.char_melting}" :  7704,
+    f"C SKIN - {names.char_melting}" :  7804,
+}
+
+skin_locations_plant: Dict[str, int] = {
+    f"B SKIN - {names.char_plant}" :    7705,
+    f"C SKIN - {names.char_plant}" :    7805,
+}
+
+skin_locations_yv: Dict[str, int] = {
+    f"B SKIN - {names.char_yv}" :       7706,
+    f"C SKIN - {names.char_yv}" :       7806,
+}
+
+skin_locations_steroids: Dict[str, int] = {
+    f"B SKIN - {names.char_steroids}" : 7707,
+    f"C SKIN - {names.char_steroids}" : 7807,
+}
+
+skin_locations_robot: Dict[str, int] = {
+    f"B SKIN - {names.char_robot}" :    7708,
+    f"C SKIN - {names.char_robot}" :    7808,
+}
+
+skin_locations_chicken: Dict[str, int] = {
+    f"B SKIN - {names.char_chicken}" :  7709,
+    f"C SKIN - {names.char_chicken}" :  7809,
+}
+
+skin_locations_rebel: Dict[str, int] = {
+    f"B SKIN - {names.char_rebel}" :    7710,
+    f"C SKIN - {names.char_rebel}" :    7810,
+}
+
+skin_locations_horror: Dict[str, int] = {
+    f"B SKIN - {names.char_horror}" :   7711,
+    f"C SKIN - {names.char_horror}" :   7811,
+}
+
+skin_locations_rogue: Dict[str, int] = {
+    f"B SKIN - {names.char_rogue}" :    7712,
+    f"C SKIN - {names.char_rogue}" :    7812,
+}
+
+skin_locations_cuz: Dict[str, int] = {
+    f"B SKIN - {names.char_cuz}" :      7716,
+    f"C SKIN - {names.char_cuz}" :      7816,
+}
+
+skin_location_table: Dict[str, int] = {
+    **skin_locations_fish,
+    **skin_locations_crystal,
+    **skin_locations_eyes,
+    **skin_locations_melting,
+    **skin_locations_plant,
+    **skin_locations_yv,
+    **skin_locations_steroids,
+    **skin_locations_robot,
+    **skin_locations_chicken,
+    **skin_locations_rebel,
+    **skin_locations_horror,
+    **skin_locations_rogue,
+    **skin_locations_cuz,
+}
+
 crown_location_table: Dict[str, int] = {
     **crown_locations_fish,
     **crown_locations_crystal,
@@ -1030,7 +1111,8 @@ location_lookup_table: Dict[str, int] = {
     **rogue_locations,
     **cuz_locations,
     **goal_locations,
-    **crown_location_table
+    **crown_location_table,
+    **skin_location_table,
 }
 
 lookup_location_to_id = {location: idx for location, idx in location_lookup_table.items() if idx is not None}

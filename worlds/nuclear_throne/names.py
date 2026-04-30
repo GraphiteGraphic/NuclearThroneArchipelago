@@ -180,6 +180,7 @@ trap_crown = "CROWN TRAP"
 trap_empty_clip = "EMPTY CLIP TRAP"
 trap_nuke = "NUKE TRAP"
 trap_car_wreck = "CAR WRECK TRAP"
+trap_darkness = "DARKNESS TRAP"
 
 # Goal Mapping
 goals = {

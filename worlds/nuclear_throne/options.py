@@ -132,9 +132,18 @@ class AnarchyMode(Toggle):
 class CrownSanity(Toggle):
     """
     Completing a loop with a crown equipped become location checks.
-    Starting with a crown already unlocked does NOT automatically complete the check.
+    NOTE: Starting with a crown already unlocked does NOT automatically complete the check.
     """
     display_name = "CrownSanity"
+    default = False
+
+
+class SkinSanity(Toggle):
+    """
+    Unlocking character skins become location checks.
+    NOTE: Opting in for this require a .sav file with the skins locked.
+    """
+    display_name = "SkinSanity"
     default = False
 
 
@@ -338,6 +347,16 @@ class CarWreckTrapPercentage(Range):
     default = 50
 
 
+class DarkTrapPercentage(Range):
+    """
+    Chance that any given trap applies the darkness effect found in Sewers, Caves, and Labs to the current level
+    """
+    display_name = "Darkness Trap Percentage"
+    range_start = 0
+    range_end = 100
+    default = 50
+
+
 @dataclass
 class NuclearThroneOptions(PerGameCommonOptions):
     starting_character: StartingCharacter
@@ -348,6 +367,7 @@ class NuclearThroneOptions(PerGameCommonOptions):
     endurance_number: EnduranceNumber
     anarchy_mode: AnarchyMode
     crownsanity: CrownSanity
+    skinsanity: SkinSanity
     trap_percentage: TrapPercentage
     drop_trap_weight: DropTrapPercentage
     eat_trap_weight: EatTrapPercentage
@@ -368,15 +388,17 @@ class NuclearThroneOptions(PerGameCommonOptions):
     empty_clip_trap_weight: EmptyClipTrapPercentage
     nuke_trap_weight: NukeTrapPercentage
     car_trap_weight: CarWreckTrapPercentage
+    dark_trap_weight: DarkTrapPercentage
 
 nuclearthrone_option_groups: List[OptionGroup] = [
     OptionGroup("Goal Options", [Goal, GoalNumber, EnduranceNumber]),
-    OptionGroup("World Options", [StartingCharacter, StartingWeapon, StartingSecondary, AnarchyMode, CrownSanity]),
+    OptionGroup("World Options", [StartingCharacter, StartingWeapon, StartingSecondary,
+                                  AnarchyMode, CrownSanity, SkinSanity]),
     OptionGroup("Trap Options", [TrapPercentage, DropTrapPercentage, CurseTrapPercentage, EatTrapPercentage,
                                 BigDogTrapPercentage, FrogTrapPercentage, HorrorTrapPercentage,
                                 MaggotTrapPercentage, PopoTrapPercentage, SkeletonTrapPercentage,
                                 TMNTTrapPercentage, SlowTrapPercentage, SpeedTrapPercentage,
                                 RustyTrapPercentage, AccuracyTrapPercentage, LowHPTrapPercentage,
                                 CrownTrapPercentage, EmptyClipTrapPercentage, NukeTrapPercentage,
-                                CarWreckTrapPercentage])
+                                CarWreckTrapPercentage, DarkTrapPercentage])
 ]

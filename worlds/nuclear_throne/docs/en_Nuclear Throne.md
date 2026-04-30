@@ -21,6 +21,8 @@ Performing the following tasks as each of the 13 characters are location checks:
 - Opening a Crown Vault (Only requires 1 per character for the location check)
 - Sitting on the Throne (Same location check as defeating the Throne to the next loop)
 - Defeating the Captain
+- OPTIONAL: Collecting each crown (Either loop or end a run defeating Throne or Captain with a crown equipped)
+- OPTIONAL: Unlocking B-skin and C-skin (Opting in for these checks requires a .sav file with all skins locked)
 
 ## When the player receives an item, what happens?
 A sound effect will play along with a message appearing above the player's head. The player must be actively in a run to receive items and become immediately available to the player.

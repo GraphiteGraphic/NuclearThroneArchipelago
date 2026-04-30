@@ -318,6 +318,7 @@ trap_item_table = {
     names.trap_empty_clip: ItemData(3017, False, trap=True),
     names.trap_nuke:       ItemData(3018, False, trap=True),
     names.trap_car_wreck:  ItemData(3019, False, trap=True),
+    names.trap_darkness:   ItemData(3020, False, trap=True),
 }
 
 filler_item_weights = {

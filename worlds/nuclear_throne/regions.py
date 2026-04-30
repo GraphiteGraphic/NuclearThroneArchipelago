@@ -37,3 +37,19 @@ crown_runs: Dict[str, Dict[str, int]] = {
     names.char_rogue:    locations.crown_locations_rogue,
     names.char_cuz:      locations.crown_locations_cuz
 }
+
+skin_runs: Dict[str, Dict[str, int]] = {
+    names.char_fish:     locations.skin_locations_fish,
+    names.char_crystal:  locations.skin_locations_crystal,
+    names.char_eyes:     locations.skin_locations_eyes,
+    names.char_melting:  locations.skin_locations_melting,
+    names.char_plant:    locations.skin_locations_plant,
+    names.char_yv:       locations.skin_locations_yv,
+    names.char_steroids: locations.skin_locations_steroids,
+    names.char_robot:    locations.skin_locations_robot,
+    names.char_chicken:  locations.skin_locations_chicken,
+    names.char_rebel:    locations.skin_locations_rebel,
+    names.char_horror:   locations.skin_locations_horror,
+    names.char_rogue:    locations.skin_locations_rogue,
+    names.char_cuz:      locations.skin_locations_cuz
+}
