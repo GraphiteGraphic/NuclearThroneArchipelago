@@ -82,7 +82,7 @@ class Goal(Choice):
     Boss Rush: Defeat all bosses in a single run
     Wasteland King: Sit on the Throne on Loop 3 or higher
     Endurance: Reach Desert 1 of the identified Loop number (Default: 1)
-    Vault Raider: Collect all crown checks for a character
+    Vault Raider: Collect all crown checks for a character (Enables CrownSanity)
     """
     display_name = "Goal"
     option_throne = 0
@@ -134,7 +134,7 @@ class AnarchyMode(Toggle):
 class CrownSanity(Toggle):
     """
     Completing a loop with a crown equipped become location checks.
-    NOTE: Starting with a crown already unlocked does NOT automatically complete the check.
+    Starting with a crown already unlocked does NOT automatically complete the check.
     """
     display_name = "CrownSanity"
     default = False
@@ -143,6 +143,7 @@ class CrownSanity(Toggle):
 class SkinSanity(Toggle):
     """
     Unlocking character skins become location checks.
+    Disables Starting Weapon and Starting Secondary options
     """
     display_name = "SkinSanity"
     default = False

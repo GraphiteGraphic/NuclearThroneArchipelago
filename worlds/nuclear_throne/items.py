@@ -31,6 +31,22 @@ character_item_table = {
     names.char_cuz:      ItemData(16, True),
 }
 
+character_list = [
+    names.char_fish,
+    names.char_crystal,
+    names.char_eyes,
+    names.char_melting,
+    names.char_plant,
+    names.char_yv,
+    names.char_steroids,
+    names.char_robot,
+    names.char_chicken,
+    names.char_rebel,
+    names.char_horror,
+    names.char_rogue,
+    names.char_cuz,
+]
+
 mutations_item_table = {
     names.mut_rhino_skin:        ItemData(1001, True),
     names.mut_extra_feet:        ItemData(1002, False),
@@ -61,6 +77,37 @@ mutations_item_table = {
     names.mut_open_mind:         ItemData(1028, False),
     names.mut_heavy_heart:       ItemData(1029, False)
 }
+
+mutations_list = [
+    names.mut_rhino_skin,        
+    names.mut_extra_feet,        
+    names.mut_plutonium_hunger,  
+    names.mut_rabbit_paw,        
+    names.mut_throne_butt,       
+    names.mut_lucky_shot,        
+    names.mut_bloodlust,        
+    names.mut_gamma_guts,       
+    names.mut_second_stomach,     
+    names.mut_back_muscle,       
+    names.mut_scarier_face,      
+    names.mut_euphoria,          
+    names.mut_long_arms,         
+    names.mut_boiling_veins,     
+    names.mut_shotgun_shoulders,  
+    names.mut_recycle_gland,      
+    names.mut_laser_brain,       
+    names.mut_eagle_eyes,        
+    names.mut_impact_wrists,      
+    names.mut_bolt_marrow,    
+    names.mut_stress,            
+    names.mut_trigger_fingers,   
+    names.mut_sharp_teeth,       
+    names.mut_patience,          
+    names.mut_hammerhead,        
+    names.mut_strong_spirit,    
+    names.mut_open_mind,         
+    names.mut_heavy_heart,      
+]
 
 mutations_goal_list = [
     names.mut_rhino_skin,

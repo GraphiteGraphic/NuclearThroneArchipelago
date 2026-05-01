@@ -47,6 +47,9 @@ class NuclearThroneWorld(World):
 
         if self.options.goal.value == 5:
             self.options.crownsanity.value = True
+        if self.options.skinsanity.value:
+            self.options.starting_weapon.value = 0
+            self.options.starting_secondary.value = 0
 
         for char_run in nuclearthrone_runs:
             required_items = nuclearthrone_runs[char_run][0]
@@ -277,6 +280,16 @@ class NuclearThroneWorld(World):
             if name in anarchy_wep:
                 classification = ItemClassification.progression_skip_balancing \
                     if item.skip_balancing else ItemClassification.progression
+        if self.options.skinsanity.value:
+            req_items = [names.wep_black_sword,names.mut_second_stomach
+                        ,names.mut_bloodlust,names.mut_gamma_guts
+                        ,names.mut_long_arms,names.mut_laser_brain
+                        ,names.mut_recycle_gland,names.mut_shotgun_shoulders
+                        ,names.mut_impact_wrists,names.mut_bolt_marrow]
+            if name in req_items:
+                classification = ItemClassification.progression_skip_balancing \
+                    if item.skip_balancing else ItemClassification.progression
+
         if item.trap:
             classification = ItemClassification.trap
 

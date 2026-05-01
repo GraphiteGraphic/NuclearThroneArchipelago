@@ -46,9 +46,50 @@ def set_rules(world: "NuclearThroneWorld") -> None:
     
     if world.options.skinsanity.value:
         fish_bskin_loc = world.multiworld.get_location(f"B SKIN - {names.char_fish}", world.player)
-        fish_cskin_loc = world.multiworld.get_location(f"C SKIN - {names.char_fish}", world.player)
         world.set_rule(fish_bskin_loc,
-            lambda state, items=items.character_item_table: state.has_all(items, world.player))
-        world.set_rule(fish_cskin_loc,
-            lambda state, items=items.character_item_table: state.has_all(items, world.player))
+            lambda state, items=items.character_list: state.has_all(items, world.player))
 
+        fish_cskin_loc = world.multiworld.get_location(f"C SKIN - {names.char_fish}", world.player)
+        world.set_rule(fish_cskin_loc,
+            lambda state, items=items.character_list: state.has_all(items, world.player))
+        
+        melting_bskin_loc = world.multiworld.get_location(f"B SKIN - {names.char_melting}", world.player)
+        world.set_rule(melting_bskin_loc,
+            lambda state, items=items.mutations_list: state.has_from_list(items, world.player, 12))
+        
+        melting_cskin_loc = world.multiworld.get_location(f"C SKIN - {names.char_melting}", world.player)
+        world.set_rule(melting_cskin_loc,
+            lambda state, items=items.mutations_list: state.has_from_list(items, world.player, 13))
+                
+        plant_cskin_loc = world.multiworld.get_location(f"C SKIN - {names.char_plant}", world.player)
+        world.set_rule(plant_cskin_loc,
+            lambda state, items=[names.wep_blood_cannon, names.wep_blood_hammer,
+                                 names.wep_blood_launcher, names.mut_bloodlust]: \
+                                 state.has_from_list(items, world.player, 2))
+
+        yv_bskin_loc = world.multiworld.get_location(f"B SKIN - {names.char_yv}", world.player)
+        world.set_rule(yv_bskin_loc,
+            lambda state, items=[names.wep_golden_crossbow, names.wep_golden_machinegun,
+                                 names.wep_golden_grenade_launcher, names.wep_golden_laser_pistol,
+                                 names.wep_golden_shotgun, names.wep_golden_wrench]: \
+                                 state.has_any(items, world.player))
+
+        yv_cskin_loc = world.multiworld.get_location(f"C SKIN - {names.char_yv}", world.player)
+        world.set_rule(yv_cskin_loc,
+            lambda state, items=[names.char_cuz]: state.has_all(items, world.player))
+
+        robot_bskin_loc = world.multiworld.get_location(f"B SKIN - {names.char_robot}", world.player)
+        world.set_rule(robot_bskin_loc,
+            lambda state, items=[names.wep_hyper_launcher, names.wep_hyper_rifle,
+                                 names.wep_hyper_slugger]: state.has_any(items, world.player))
+
+        chicken_cskin_loc = world.multiworld.get_location(f"C SKIN - {names.char_chicken}", world.player)
+        world.set_rule(chicken_cskin_loc,
+            lambda state, items=[names.wep_black_sword]: state.has_all(items, world.player))
+
+        cuz_bskin_loc = world.multiworld.get_location(f"B SKIN - {names.char_cuz}", world.player)
+        world.set_rule(cuz_bskin_loc,
+            lambda state, items=[names.wep_golden_crossbow, names.wep_golden_machinegun,
+                                 names.wep_golden_grenade_launcher, names.wep_golden_laser_pistol,
+                                 names.wep_golden_shotgun, names.wep_golden_wrench]: \
+                                 state.has_from_list(items, world.player, 3))
