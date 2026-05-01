@@ -45,6 +45,9 @@ class NuclearThroneWorld(World):
         menu = NuclearThroneRegion("Menu", self.player, self.multiworld)
         self.multiworld.regions.append(menu)                
 
+        if self.options.goal.value == 5:
+            self.options.crownsanity.value = True
+
         for char_run in nuclearthrone_runs:
             required_items = nuclearthrone_runs[char_run][0]
             run_locations = nuclearthrone_runs[char_run][1]
@@ -144,7 +147,7 @@ class NuclearThroneWorld(World):
                     self.multiworld.get_region(f"{names.palace_03} - {required_items[0]}", 
                                                self.player).connect(region, f"To {level}",
                         lambda state, items=items.mutations_goal_list: state.has_from_list(items, self.player, 7))
-                    if self.options.goal.value == 4:
+                    if self.options.goal.value == 4 or self.options.goal.value == 5:
                         goal_id = items.character_item_table[required_items[0]].index + 99900
                         goal_name = f"GOAL - {required_items[0]}"
                         region.add_locations({goal_name : goal_id}, NuclearThroneLocation)

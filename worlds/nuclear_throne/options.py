@@ -82,6 +82,7 @@ class Goal(Choice):
     Boss Rush: Defeat all bosses in a single run
     Wasteland King: Sit on the Throne on Loop 3 or higher
     Endurance: Reach Desert 1 of the identified Loop number (Default: 1)
+    Vault Raider: Collect all crown checks for a character
     """
     display_name = "Goal"
     option_throne = 0
@@ -89,6 +90,7 @@ class Goal(Choice):
     option_boss_rush = 2
     option_wasteland_king = 3
     option_endurance = 4
+    option_vault_raider = 5
     default = 0
     
     @classmethod
@@ -141,7 +143,6 @@ class CrownSanity(Toggle):
 class SkinSanity(Toggle):
     """
     Unlocking character skins become location checks.
-    NOTE: Opting in for this require a .sav file with the skins locked.
     """
     display_name = "SkinSanity"
     default = False

@@ -189,6 +189,7 @@ goals = {
     2: "BOSS RUSH",
     3: "WASTELAND KING",
     4: "ENDURANCE",
+    5: "VAULT RAIDER",
 }
 
 # Locations (Level - Character)

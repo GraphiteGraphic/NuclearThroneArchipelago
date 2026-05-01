@@ -108,11 +108,64 @@ class NuclearThroneContext(CommonContext):
                 self.full_inventory.append(item_obj)
                 if item_obj >= 5000:
                     self.goal_complete += 1
-
+            
         elif cmd == "Bounced":
             data = args.get("data", None)
             if data is not None and data["source"] != self.player_names[self.slot]:
                 self.deathlink_occurrence = data["source"]
+
+    async def vault_raider_check(self):
+        fish_crowns = set([102,103,104,105,106,107,108,109,110,111,112,113])
+        if fish_crowns.issubset(self.checked_locations):
+            await self.check_locations([99901])
+        
+        crystal_crowns = set([202,203,204,205,206,207,208,209,210,211,212,213])
+        if crystal_crowns.issubset(self.checked_locations):
+            await self.check_locations([99902])
+        
+        eyes_crowns = set([302,303,304,305,306,307,308,309,310,311,312,313])
+        if eyes_crowns.issubset(self.checked_locations):
+            await self.check_locations([99903])
+        
+        melting_crowns = set([402,403,404,405,406,407,408,409,410,411,412,413])
+        if melting_crowns.issubset(self.checked_locations):
+            await self.check_locations([99904])
+        
+        plant_crowns = set([502,503,504,505,506,507,508,509,510,511,512,513])
+        if plant_crowns.issubset(self.checked_locations):
+            await self.check_locations([99905])
+        
+        yv_crowns = set([602,603,604,605,606,607,608,609,610,611,612,613])
+        if yv_crowns.issubset(self.checked_locations):
+            await self.check_locations([99906])
+        
+        steroids_crowns = set([702,703,704,705,706,707,708,709,710,711,712,713])
+        if steroids_crowns.issubset(self.checked_locations):
+            await self.check_locations([99907])
+        
+        robot_crowns = set([802,803,804,805,806,807,808,809,810,811,812,813])
+        if robot_crowns.issubset(self.checked_locations):
+            await self.check_locations([99908])
+        
+        chicken_crowns = set([902,903,904,905,906,907,908,909,910,911,912,913])
+        if chicken_crowns.issubset(self.checked_locations):
+            await self.check_locations([99909])
+        
+        rebel_crowns = set([1002,1003,1004,1005,1006,1007,1008,1009,1010,1011,1012,1013])
+        if rebel_crowns.issubset(self.checked_locations):
+            await self.check_locations([99910])
+        
+        horror_crowns = set([1102,1103,1104,1105,1106,1107,1108,1109,1110,1111,1112,1113])
+        if horror_crowns.issubset(self.checked_locations):
+            await self.check_locations([99911])
+        
+        rogue_crowns = set([1202,1203,1204,1205,1206,1207,1208,1209,1210,1211,1212,1213])
+        if rogue_crowns.issubset(self.checked_locations):
+            await self.check_locations([99912])
+        
+        cuz_crowns = set([1602,1603,1604,1605,1606,1607,1608,1609,1610,1611,1612,1613])
+        if cuz_crowns.issubset(self.checked_locations):
+            await self.check_locations([99916])
 
     def run_gui(self):
         from kvui import GameManager
@@ -201,6 +254,9 @@ def create_http_app(ctx: NuclearThroneContext):
                 raise ValueError("Missing location_id")
 
             await ctx.check_locations([int(location_id)])
+            if ctx.slot_data["goal"] == 5:
+                await ctx.vault_raider_check()
+
             return web.json_response({"received": location_id})
 
         except Exception as e:
