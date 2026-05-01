@@ -36,7 +36,6 @@ def set_rules(world: "NuclearThroneWorld") -> None:
                                                               ItemClassification.progression, 5000, world.player))
             world.set_rule(goal_location,
                 lambda state, items=items.mutations_goal_list: state.has_from_list(items, world.player, 7))
-
         else:          
             goal_location = world.multiworld.get_location(f"GOAL - {world.item_id_to_name[i]}",
                                                            world.player)
@@ -44,3 +43,12 @@ def set_rules(world: "NuclearThroneWorld") -> None:
                                                                world.player))
             world.set_rule(goal_location,
                 lambda state, items=items.mutations_goal_list: state.has_from_list(items, world.player, 7))
+    
+    if world.options.skinsanity.value:
+        fish_bskin_loc = world.multiworld.get_location(f"B SKIN - {names.char_fish}", world.player)
+        fish_cskin_loc = world.multiworld.get_location(f"C SKIN - {names.char_fish}", world.player)
+        world.set_rule(fish_bskin_loc,
+            lambda state, items=items.character_item_table: state.has_all(items, world.player))
+        world.set_rule(fish_cskin_loc,
+            lambda state, items=items.character_item_table: state.has_all(items, world.player))
+
