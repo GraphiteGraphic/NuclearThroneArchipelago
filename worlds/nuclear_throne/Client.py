@@ -65,6 +65,12 @@ class NuclearThroneContext(CommonContext):
         await self.send_connect()
 
     async def connect(self, address: Optional[str] = None):
+        self.full_inventory.clear()
+        self.awaiting_items.clear()
+        self.deathlink_occurrence = None
+        self.slot_data = None
+        self.goal_number = 1
+        self.goal_complete = 0
         await super().connect(address)
 
     async def disconnect(self, allow_autoreconnect: bool = False):
