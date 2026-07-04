@@ -10,19 +10,19 @@ class TestLocations(NuclearThroneTestBase):
     options = preset.beginner
 
     def test_characters(self) -> None:
-        self.run_location_test(self, f"{names.desert_01} - {names.char_fish}",     [names.char_fish])
-        self.run_location_test(self, f"{names.desert_01} - {names.char_crystal}",  [names.char_crystal])
-        self.run_location_test(self, f"{names.desert_01} - {names.char_eyes}",     [names.char_eyes])
-        self.run_location_test(self, f"{names.desert_01} - {names.char_melting}",  [names.char_melting])
-        self.run_location_test(self, f"{names.desert_01} - {names.char_plant}",    [names.char_plant])
-        self.run_location_test(self, f"{names.desert_01} - {names.char_yv}",       [names.char_yv])
-        self.run_location_test(self, f"{names.desert_01} - {names.char_steroids}", [names.char_steroids])
-        self.run_location_test(self, f"{names.desert_01} - {names.char_robot}",    [names.char_robot])
-        self.run_location_test(self, f"{names.desert_01} - {names.char_chicken}",  [names.char_chicken])
-        self.run_location_test(self, f"{names.desert_01} - {names.char_rebel}",    [names.char_rebel])
-        self.run_location_test(self, f"{names.desert_01} - {names.char_horror}",   [names.char_horror])
-        self.run_location_test(self, f"{names.desert_01} - {names.char_rogue}",    [names.char_rogue])
-        self.run_location_test(self, f"{names.desert_01} - {names.char_cuz}",      [names.char_cuz])
+        self.run_location_test(self, f"{names.char_fish} - {names.desert_01}", [names.char_fish])
+        self.run_location_test(self, f"{names.char_crystal} - {names.desert_01}", [names.char_crystal])
+        self.run_location_test(self, f"{names.char_eyes} - {names.desert_01}", [names.char_eyes])
+        self.run_location_test(self, f"{names.char_melting} - {names.desert_01}", [names.char_melting])
+        self.run_location_test(self, f"{names.char_plant} - {names.desert_01}", [names.char_plant])
+        self.run_location_test(self, f"{names.char_yv} - {names.desert_01}", [names.char_yv])
+        self.run_location_test(self, f"{names.char_steroids} - {names.desert_01}", [names.char_steroids])
+        self.run_location_test(self, f"{names.char_robot} - {names.desert_01}", [names.char_robot])
+        self.run_location_test(self, f"{names.char_chicken} - {names.desert_01}", [names.char_chicken])
+        self.run_location_test(self, f"{names.char_rebel} - {names.desert_01}", [names.char_rebel])
+        self.run_location_test(self, f"{names.char_horror} - {names.desert_01}", [names.char_horror])
+        self.run_location_test(self, f"{names.char_rogue} - {names.desert_01}", [names.char_rogue])
+        self.run_location_test(self, f"{names.char_cuz} - {names.desert_01}", [names.char_cuz])
 
     def run_location_test(self, location: str, itempool: typing.List[str]) -> None:
         items = itempool.copy()

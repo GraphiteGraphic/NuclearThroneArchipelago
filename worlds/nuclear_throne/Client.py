@@ -39,6 +39,17 @@ class NuclearThroneCommandProcessor(ClientCommandProcessor):
                 self.output(f"Deathlink enabled. {self.ctx.tags}")
             await self.ctx.disconnect(True)
 
+    def _cmd_goal(self):
+        """Displays the current goal number and completion status"""
+        if isinstance(self.ctx, NuclearThroneContext):
+            goal_lookup = { 99901: "FISH", 99902: "CRYSTAL", 99903: "EYES", 99904: "MELTING", 99905: "PLANT",
+                            99906: "Y.V.", 99907: "STEROIDS", 99908: "ROBOT", 99909: "CHICKEN", 99910: "REBEL",
+                            99911: "HORROR", 99912: "ROGUE", 99916: "CUZ" }
+            self.output(f"Goals completed: {self.ctx.goal_complete}/{self.ctx.goal_number}")
+            for check in self.ctx.checked_locations:
+                   if check > 99900:
+                        self.output(goal_lookup.get(check, f"Unknown goal {check}"))
+
 
 class NuclearThroneContext(CommonContext):
     command_processor = NuclearThroneCommandProcessor

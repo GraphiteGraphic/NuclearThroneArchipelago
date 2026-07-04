@@ -7,6 +7,7 @@ beginner = {
     "goal_number": 1,
     "anarchy_mode": True,
     "trap_percentage": 0,
+    "exclude_locations": ["MELTING", "CAMPFIRE", "HQ"],
 }
 
 random = {

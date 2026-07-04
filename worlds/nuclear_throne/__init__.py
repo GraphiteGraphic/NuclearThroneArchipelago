@@ -119,189 +119,189 @@ class NuclearThroneWorld(World):
         "CROWNS - HORROR": locations.crown_locations_horror.keys(),
         "CROWNS - ROGUE": locations.crown_locations_rogue.keys(),
         "CROWNS - CUZ": locations.crown_locations_cuz.keys(),
-        "CROWNS - PRELOOP": {f"CROWN OF LIFE - {names.char_fish}",
-                            f"CROWN OF LIFE - {names.char_crystal}",
-                            f"CROWN OF LIFE - {names.char_eyes}",
-                            f"CROWN OF LIFE - {names.char_melting}",
-                            f"CROWN OF LIFE - {names.char_plant}",
-                            f"CROWN OF LIFE - {names.char_yv}",
-                            f"CROWN OF LIFE - {names.char_steroids}",
-                            f"CROWN OF LIFE - {names.char_robot}",
-                            f"CROWN OF LIFE - {names.char_chicken}",
-                            f"CROWN OF LIFE - {names.char_rebel}",
-                            f"CROWN OF LIFE - {names.char_horror}",
-                            f"CROWN OF LIFE - {names.char_rogue}",
-                            f"CROWN OF LIFE - {names.char_cuz}",
-                            f"CROWN OF GUNS - {names.char_fish}",
-                            f"CROWN OF GUNS - {names.char_crystal}",
-                            f"CROWN OF GUNS - {names.char_eyes}",
-                            f"CROWN OF GUNS - {names.char_melting}",
-                            f"CROWN OF GUNS - {names.char_plant}",
-                            f"CROWN OF GUNS - {names.char_yv}",
-                            f"CROWN OF GUNS - {names.char_steroids}",
-                            f"CROWN OF GUNS - {names.char_robot}",
-                            f"CROWN OF GUNS - {names.char_chicken}",
-                            f"CROWN OF GUNS - {names.char_rebel}",
-                            f"CROWN OF GUNS - {names.char_horror}",
-                            f"CROWN OF GUNS - {names.char_rogue}",
-                            f"CROWN OF GUNS - {names.char_cuz}",
-                            f"CROWN OF HASTE - {names.char_fish}",
-                            f"CROWN OF HASTE - {names.char_crystal}",
-                            f"CROWN OF HASTE - {names.char_eyes}",
-                            f"CROWN OF HASTE - {names.char_melting}",
-                            f"CROWN OF HASTE - {names.char_plant}",
-                            f"CROWN OF HASTE - {names.char_yv}",
-                            f"CROWN OF HASTE - {names.char_steroids}",
-                            f"CROWN OF HASTE - {names.char_robot}",
-                            f"CROWN OF HASTE - {names.char_chicken}",
-                            f"CROWN OF HASTE - {names.char_rebel}",
-                            f"CROWN OF HASTE - {names.char_horror}",
-                            f"CROWN OF HASTE - {names.char_rogue}",
-                            f"CROWN OF HASTE - {names.char_cuz}",
-                            f"CROWN OF DESTINY - {names.char_fish}",
-                            f"CROWN OF DESTINY - {names.char_crystal}",
-                            f"CROWN OF DESTINY - {names.char_eyes}",
-                            f"CROWN OF DESTINY - {names.char_melting}",
-                            f"CROWN OF DESTINY - {names.char_plant}",
-                            f"CROWN OF DESTINY - {names.char_yv}",
-                            f"CROWN OF DESTINY - {names.char_steroids}",
-                            f"CROWN OF DESTINY - {names.char_robot}",
-                            f"CROWN OF DESTINY - {names.char_chicken}",
-                            f"CROWN OF DESTINY - {names.char_rebel}",
-                            f"CROWN OF DESTINY - {names.char_horror}",
-                            f"CROWN OF DESTINY - {names.char_rogue}",
-                            f"CROWN OF DESTINY - {names.char_cuz}",
-                            f"CROWN OF CURSES - {names.char_fish}",
-                            f"CROWN OF CURSES - {names.char_crystal}",
-                            f"CROWN OF CURSES - {names.char_eyes}",
-                            f"CROWN OF CURSES - {names.char_melting}",
-                            f"CROWN OF CURSES - {names.char_plant}",
-                            f"CROWN OF CURSES - {names.char_yv}",
-                            f"CROWN OF CURSES - {names.char_steroids}",
-                            f"CROWN OF CURSES - {names.char_robot}",
-                            f"CROWN OF CURSES - {names.char_chicken}",
-                            f"CROWN OF CURSES - {names.char_rebel}",
-                            f"CROWN OF CURSES - {names.char_horror}",
-                            f"CROWN OF CURSES - {names.char_rogue}",
-                            f"CROWN OF CURSES - {names.char_cuz}",
-                            f"CROWN OF RISK - {names.char_fish}",
-                            f"CROWN OF RISK - {names.char_crystal}",
-                            f"CROWN OF RISK - {names.char_eyes}",
-                            f"CROWN OF RISK - {names.char_melting}",
-                            f"CROWN OF RISK - {names.char_plant}",
-                            f"CROWN OF RISK - {names.char_yv}",
-                            f"CROWN OF RISK - {names.char_steroids}",
-                            f"CROWN OF RISK - {names.char_robot}",
-                            f"CROWN OF RISK - {names.char_chicken}",
-                            f"CROWN OF RISK - {names.char_rebel}",
-                            f"CROWN OF RISK - {names.char_horror}",
-                            f"CROWN OF RISK - {names.char_rogue}",
-                            f"CROWN OF RISK - {names.char_cuz}"},
-        "CROWNS - POSTLOOP": {f"CROWN OF DEATH - {names.char_fish}",
-                            f"CROWN OF DEATH - {names.char_crystal}",
-                            f"CROWN OF DEATH - {names.char_eyes}",
-                            f"CROWN OF DEATH - {names.char_melting}",
-                            f"CROWN OF DEATH - {names.char_plant}",
-                            f"CROWN OF DEATH - {names.char_yv}",
-                            f"CROWN OF DEATH - {names.char_steroids}",
-                            f"CROWN OF DEATH - {names.char_robot}",
-                            f"CROWN OF DEATH - {names.char_chicken}",
-                            f"CROWN OF DEATH - {names.char_rebel}",
-                            f"CROWN OF DEATH - {names.char_horror}",
-                            f"CROWN OF DEATH - {names.char_rogue}",
-                            f"CROWN OF DEATH - {names.char_cuz}",
-                            f"CROWN OF BLOOD - {names.char_fish}",
-                            f"CROWN OF BLOOD - {names.char_crystal}",
-                            f"CROWN OF BLOOD - {names.char_eyes}",
-                            f"CROWN OF BLOOD - {names.char_melting}",
-                            f"CROWN OF BLOOD - {names.char_plant}",
-                            f"CROWN OF BLOOD - {names.char_yv}",
-                            f"CROWN OF BLOOD - {names.char_steroids}",
-                            f"CROWN OF BLOOD - {names.char_robot}",
-                            f"CROWN OF BLOOD - {names.char_chicken}",
-                            f"CROWN OF BLOOD - {names.char_rebel}",
-                            f"CROWN OF BLOOD - {names.char_horror}",
-                            f"CROWN OF BLOOD - {names.char_rogue}",
-                            f"CROWN OF BLOOD - {names.char_cuz}",
-                            f"CROWN OF HATRED - {names.char_fish}",
-                            f"CROWN OF HATRED - {names.char_crystal}",
-                            f"CROWN OF HATRED - {names.char_eyes}",
-                            f"CROWN OF HATRED - {names.char_melting}",
-                            f"CROWN OF HATRED - {names.char_plant}",
-                            f"CROWN OF HATRED - {names.char_yv}",
-                            f"CROWN OF HATRED - {names.char_steroids}",
-                            f"CROWN OF HATRED - {names.char_robot}",
-                            f"CROWN OF HATRED - {names.char_chicken}",
-                            f"CROWN OF HATRED - {names.char_rebel}",
-                            f"CROWN OF HATRED - {names.char_horror}",
-                            f"CROWN OF HATRED - {names.char_rogue}",
-                            f"CROWN OF HATRED - {names.char_cuz}",
-                            f"CROWN OF LOVE - {names.char_fish}",
-                            f"CROWN OF LOVE - {names.char_crystal}",
-                            f"CROWN OF LOVE - {names.char_eyes}",
-                            f"CROWN OF LOVE - {names.char_melting}",
-                            f"CROWN OF LOVE - {names.char_plant}",
-                            f"CROWN OF LOVE - {names.char_yv}",
-                            f"CROWN OF LOVE - {names.char_steroids}",
-                            f"CROWN OF LOVE - {names.char_robot}",
-                            f"CROWN OF LOVE - {names.char_chicken}",
-                            f"CROWN OF LOVE - {names.char_rebel}",
-                            f"CROWN OF LOVE - {names.char_horror}",
-                            f"CROWN OF LOVE - {names.char_rogue}",
-                            f"CROWN OF LOVE - {names.char_cuz}",
-                            f"CROWN OF LUCK - {names.char_fish}",
-                            f"CROWN OF LUCK - {names.char_crystal}",
-                            f"CROWN OF LUCK - {names.char_eyes}",
-                            f"CROWN OF LUCK - {names.char_melting}",
-                            f"CROWN OF LUCK - {names.char_plant}",
-                            f"CROWN OF LUCK - {names.char_yv}",
-                            f"CROWN OF LUCK - {names.char_steroids}",
-                            f"CROWN OF LUCK - {names.char_robot}",
-                            f"CROWN OF LUCK - {names.char_chicken}",
-                            f"CROWN OF LUCK - {names.char_rebel}",
-                            f"CROWN OF LUCK - {names.char_horror}",
-                            f"CROWN OF LUCK - {names.char_rogue}",
-                            f"CROWN OF LUCK - {names.char_cuz}",
-                            f"CROWN OF PROTECTION - {names.char_fish}",
-                            f"CROWN OF PROTECTION - {names.char_crystal}",
-                            f"CROWN OF PROTECTION - {names.char_eyes}",
-                            f"CROWN OF PROTECTION - {names.char_melting}",
-                            f"CROWN OF PROTECTION - {names.char_plant}",
-                            f"CROWN OF PROTECTION - {names.char_yv}",
-                            f"CROWN OF PROTECTION - {names.char_steroids}",
-                            f"CROWN OF PROTECTION - {names.char_robot}",
-                            f"CROWN OF PROTECTION - {names.char_chicken}",
-                            f"CROWN OF PROTECTION - {names.char_rebel}",
-                            f"CROWN OF PROTECTION - {names.char_horror}",
-                            f"CROWN OF PROTECTION - {names.char_rogue}",
-                            f"CROWN OF PROTECTION - {names.char_cuz}"},
+        "CROWNS - PRELOOP": {f"{names.char_fish} - CROWN OF LIFE",
+                            f"{names.char_crystal} - CROWN OF LIFE",
+                            f"{names.char_eyes} - CROWN OF LIFE",
+                            f"{names.char_melting} - CROWN OF LIFE",
+                            f"{names.char_plant} - CROWN OF LIFE",
+                            f"{names.char_yv} - CROWN OF LIFE",
+                            f"{names.char_steroids} - CROWN OF LIFE",
+                            f"{names.char_robot} - CROWN OF LIFE",
+                            f"{names.char_chicken} - CROWN OF LIFE",
+                            f"{names.char_rebel} - CROWN OF LIFE",
+                            f"{names.char_horror} - CROWN OF LIFE",
+                            f"{names.char_rogue} - CROWN OF LIFE",
+                            f"{names.char_cuz} - CROWN OF LIFE",
+                            f"{names.char_fish} - CROWN OF GUNS",
+                            f"{names.char_crystal} - CROWN OF GUNS",
+                            f"{names.char_eyes} - CROWN OF GUNS",
+                            f"{names.char_melting} - CROWN OF GUNS",
+                            f"{names.char_plant} - CROWN OF GUNS",
+                            f"{names.char_yv} - CROWN OF GUNS",
+                            f"{names.char_steroids} - CROWN OF GUNS",
+                            f"{names.char_robot} - CROWN OF GUNS",
+                            f"{names.char_chicken} - CROWN OF GUNS",
+                            f"{names.char_rebel} - CROWN OF GUNS",
+                            f"{names.char_horror} - CROWN OF GUNS",
+                            f"{names.char_rogue} - CROWN OF GUNS",
+                            f"{names.char_cuz} - CROWN OF GUNS",
+                            f"{names.char_fish} - CROWN OF HASTE",
+                            f"{names.char_crystal} - CROWN OF HASTE",
+                            f"{names.char_eyes} - CROWN OF HASTE",
+                            f"{names.char_melting} - CROWN OF HASTE",
+                            f"{names.char_plant} - CROWN OF HASTE",
+                            f"{names.char_yv} - CROWN OF HASTE",
+                            f"{names.char_steroids} - CROWN OF HASTE",
+                            f"{names.char_robot} - CROWN OF HASTE",
+                            f"{names.char_chicken} - CROWN OF HASTE",
+                            f"{names.char_rebel} - CROWN OF HASTE",
+                            f"{names.char_horror} - CROWN OF HASTE",
+                            f"{names.char_rogue} - CROWN OF HASTE",
+                            f"{names.char_cuz} - CROWN OF HASTE",
+                            f"{names.char_fish} - CROWN OF DESTINY",
+                            f"{names.char_crystal} - CROWN OF DESTINY",
+                            f"{names.char_eyes} - CROWN OF DESTINY",
+                            f"{names.char_melting} - CROWN OF DESTINY",
+                            f"{names.char_plant} - CROWN OF DESTINY",
+                            f"{names.char_yv} - CROWN OF DESTINY",
+                            f"{names.char_steroids} - CROWN OF DESTINY",
+                            f"{names.char_robot} - CROWN OF DESTINY",
+                            f"{names.char_chicken} - CROWN OF DESTINY",
+                            f"{names.char_rebel} - CROWN OF DESTINY",
+                            f"{names.char_horror} - CROWN OF DESTINY",
+                            f"{names.char_rogue} - CROWN OF DESTINY",
+                            f"{names.char_cuz} - CROWN OF DESTINY",
+                            f"{names.char_fish} - CROWN OF CURSES",
+                            f"{names.char_crystal} - CROWN OF CURSES",
+                            f"{names.char_eyes} - CROWN OF CURSES",
+                            f"{names.char_melting} - CROWN OF CURSES",
+                            f"{names.char_plant} - CROWN OF CURSES",
+                            f"{names.char_yv} - CROWN OF CURSES",
+                            f"{names.char_steroids} - CROWN OF CURSES",
+                            f"{names.char_robot} - CROWN OF CURSES",
+                            f"{names.char_chicken} - CROWN OF CURSES",
+                            f"{names.char_rebel} - CROWN OF CURSES",
+                            f"{names.char_horror} - CROWN OF CURSES",
+                            f"{names.char_rogue} - CROWN OF CURSES",
+                            f"{names.char_cuz} - CROWN OF CURSES",
+                            f"{names.char_fish} - CROWN OF RISK",
+                            f"{names.char_crystal} - CROWN OF RISK",
+                            f"{names.char_eyes} - CROWN OF RISK",
+                            f"{names.char_melting} - CROWN OF RISK",
+                            f"{names.char_plant} - CROWN OF RISK",
+                            f"{names.char_yv} - CROWN OF RISK",
+                            f"{names.char_steroids} - CROWN OF RISK",
+                            f"{names.char_robot} - CROWN OF RISK",
+                            f"{names.char_chicken} - CROWN OF RISK",
+                            f"{names.char_rebel} - CROWN OF RISK",
+                            f"{names.char_horror} - CROWN OF RISK",
+                            f"{names.char_rogue} - CROWN OF RISK",
+                            f"{names.char_cuz} - CROWN OF RISK"},
+         "CROWNS - POSTLOOP": {f"{names.char_fish} - CROWN OF DEATH",
+                            f"{names.char_crystal} - CROWN OF DEATH",
+                            f"{names.char_eyes} - CROWN OF DEATH",
+                            f"{names.char_melting} - CROWN OF DEATH",
+                            f"{names.char_plant} - CROWN OF DEATH",
+                            f"{names.char_yv} - CROWN OF DEATH",
+                            f"{names.char_steroids} - CROWN OF DEATH",
+                            f"{names.char_robot} - CROWN OF DEATH",
+                            f"{names.char_chicken} - CROWN OF DEATH",
+                            f"{names.char_rebel} - CROWN OF DEATH",
+                            f"{names.char_horror} - CROWN OF DEATH",
+                            f"{names.char_rogue} - CROWN OF DEATH",
+                            f"{names.char_cuz} - CROWN OF DEATH",
+                            f"{names.char_fish} - CROWN OF BLOOD",
+                            f"{names.char_crystal} - CROWN OF BLOOD",
+                            f"{names.char_eyes} - CROWN OF BLOOD",
+                            f"{names.char_melting} - CROWN OF BLOOD",
+                            f"{names.char_plant} - CROWN OF BLOOD",
+                            f"{names.char_yv} - CROWN OF BLOOD",
+                            f"{names.char_steroids} - CROWN OF BLOOD",
+                            f"{names.char_robot} - CROWN OF BLOOD",
+                            f"{names.char_chicken} - CROWN OF BLOOD",
+                            f"{names.char_rebel} - CROWN OF BLOOD",
+                            f"{names.char_horror} - CROWN OF BLOOD",
+                            f"{names.char_rogue} - CROWN OF BLOOD",
+                            f"{names.char_cuz} - CROWN OF BLOOD",
+                            f"{names.char_fish} - CROWN OF HATRED",
+                            f"{names.char_crystal} - CROWN OF HATRED",
+                            f"{names.char_eyes} - CROWN OF HATRED",
+                            f"{names.char_melting} - CROWN OF HATRED",
+                            f"{names.char_plant} - CROWN OF HATRED",
+                            f"{names.char_yv} - CROWN OF HATRED",
+                            f"{names.char_steroids} - CROWN OF HATRED",
+                            f"{names.char_robot} - CROWN OF HATRED",
+                            f"{names.char_chicken} - CROWN OF HATRED",
+                            f"{names.char_rebel} - CROWN OF HATRED",
+                            f"{names.char_horror} - CROWN OF HATRED",
+                            f"{names.char_rogue} - CROWN OF HATRED",
+                            f"{names.char_cuz} - CROWN OF HATRED",
+                            f"{names.char_fish} - CROWN OF LOVE",
+                            f"{names.char_crystal} - CROWN OF LOVE",
+                            f"{names.char_eyes} - CROWN OF LOVE",
+                            f"{names.char_melting} - CROWN OF LOVE",
+                            f"{names.char_plant} - CROWN OF LOVE",
+                            f"{names.char_yv} - CROWN OF LOVE",
+                            f"{names.char_steroids} - CROWN OF LOVE",
+                            f"{names.char_robot} - CROWN OF LOVE",
+                            f"{names.char_chicken} - CROWN OF LOVE",
+                            f"{names.char_rebel} - CROWN OF LOVE",
+                            f"{names.char_horror} - CROWN OF LOVE",
+                            f"{names.char_rogue} - CROWN OF LOVE",
+                            f"{names.char_cuz} - CROWN OF LOVE",
+                            f"{names.char_fish} - CROWN OF LUCK",
+                            f"{names.char_crystal} - CROWN OF LUCK",
+                            f"{names.char_eyes} - CROWN OF LUCK",
+                            f"{names.char_melting} - CROWN OF LUCK",
+                            f"{names.char_plant} - CROWN OF LUCK",
+                            f"{names.char_yv} - CROWN OF LUCK",
+                            f"{names.char_steroids} - CROWN OF LUCK",
+                            f"{names.char_robot} - CROWN OF LUCK",
+                            f"{names.char_chicken} - CROWN OF LUCK",
+                            f"{names.char_rebel} - CROWN OF LUCK",
+                            f"{names.char_horror} - CROWN OF LUCK",
+                            f"{names.char_rogue} - CROWN OF LUCK",
+                            f"{names.char_cuz} - CROWN OF LUCK",
+                            f"{names.char_fish} - CROWN OF PROTECTION",
+                            f"{names.char_crystal} - CROWN OF PROTECTION",
+                            f"{names.char_eyes} - CROWN OF PROTECTION",
+                            f"{names.char_melting} - CROWN OF PROTECTION",
+                            f"{names.char_plant} - CROWN OF PROTECTION",
+                            f"{names.char_yv} - CROWN OF PROTECTION",
+                            f"{names.char_steroids} - CROWN OF PROTECTION",
+                            f"{names.char_robot} - CROWN OF PROTECTION",
+                            f"{names.char_chicken} - CROWN OF PROTECTION",
+                            f"{names.char_rebel} - CROWN OF PROTECTION",
+                            f"{names.char_horror} - CROWN OF PROTECTION",
+                            f"{names.char_rogue} - CROWN OF PROTECTION",
+                            f"{names.char_cuz} - CROWN OF PROTECTION"},
         "SKINS": locations.skin_location_table.keys(),
-        "B SKINS": {f"B SKIN - {names.char_fish}",
-                    f"B SKIN - {names.char_crystal}",
-                    f"B SKIN - {names.char_eyes}",
-                    f"B SKIN - {names.char_melting}",
-                    f"B SKIN - {names.char_plant}",
-                    f"B SKIN - {names.char_yv}",
-                    f"B SKIN - {names.char_steroids}",
-                    f"B SKIN - {names.char_robot}",
-                    f"B SKIN - {names.char_chicken}",
-                    f"B SKIN - {names.char_rebel}",
-                    f"B SKIN - {names.char_horror}",
-                    f"B SKIN - {names.char_rogue}",
-                    f"B SKIN - {names.char_cuz}"},
-        "C SKINS": {f"C SKIN - {names.char_fish}",
-                    f"C SKIN - {names.char_crystal}",
-                    f"C SKIN - {names.char_eyes}",
-                    f"C SKIN - {names.char_melting}",
-                    f"C SKIN - {names.char_plant}",
-                    f"C SKIN - {names.char_yv}",
-                    f"C SKIN - {names.char_steroids}",
-                    f"C SKIN - {names.char_robot}",
-                    f"C SKIN - {names.char_chicken}",
-                    f"C SKIN - {names.char_rebel}",
-                    f"C SKIN - {names.char_horror}",
-                    f"C SKIN - {names.char_rogue}",
-                    f"C SKIN - {names.char_cuz}"},
+        "B SKINS": {f"{names.char_fish} - B SKIN",
+                    f"{names.char_crystal} - B SKIN",
+                    f"{names.char_eyes} - B SKIN",
+                    f"{names.char_melting} - B SKIN",
+                    f"{names.char_plant} - B SKIN",
+                    f"{names.char_yv} - B SKIN",
+                    f"{names.char_steroids} - B SKIN",
+                    f"{names.char_robot} - B SKIN",
+                    f"{names.char_chicken} - B SKIN",
+                    f"{names.char_rebel} - B SKIN",
+                    f"{names.char_horror} - B SKIN",
+                    f"{names.char_rogue} - B SKIN",
+                    f"{names.char_cuz} - B SKIN"},
+        "C SKINS": {f"{names.char_fish} - C SKIN",
+                    f"{names.char_crystal} - C SKIN",
+                    f"{names.char_eyes} - C SKIN",
+                    f"{names.char_melting} - C SKIN",
+                    f"{names.char_plant} - C SKIN",
+                    f"{names.char_yv} - C SKIN",
+                    f"{names.char_steroids} - C SKIN",
+                    f"{names.char_robot} - C SKIN",
+                    f"{names.char_chicken} - C SKIN",
+                    f"{names.char_rebel} - C SKIN",
+                    f"{names.char_horror} - C SKIN",
+                    f"{names.char_rogue} - C SKIN",
+                    f"{names.char_cuz} - C SKIN"},
     }
 
     def create_regions(self) -> None:
@@ -327,123 +327,123 @@ class NuclearThroneWorld(World):
                 elif level in locations.desert_02_locations:
                     lvl_fmt = {level : locations.desert_02_locations[level]}
                     region.add_locations(lvl_fmt, NuclearThroneLocation)
-                    self.multiworld.get_region(f"{names.desert_01} - {required_items[0]}", 
+                    self.multiworld.get_region(f"{required_items[0]} - {names.desert_01}", 
                                                self.player).connect(region, f"To {level}")
                 elif level in locations.desert_03_locations:
                     lvl_fmt = {level : locations.desert_03_locations[level]}
                     region.add_locations(lvl_fmt, NuclearThroneLocation)
-                    self.multiworld.get_region(f"{names.desert_02} - {required_items[0]}", 
+                    self.multiworld.get_region(f"{required_items[0]} - {names.desert_02}", 
                                                self.player).connect(region, f"To {level}")
                 elif level in locations.sewers_locations:
                     lvl_fmt = {level : locations.sewers_locations[level]}
                     region.add_locations(lvl_fmt, NuclearThroneLocation)
-                    self.multiworld.get_region(f"{names.desert_03} - {required_items[0]}", 
+                    self.multiworld.get_region(f"{required_items[0]} - {names.desert_03}", 
                                                self.player).connect(region, f"To {level}",
                         lambda state, items=items.mutations_goal_list: state.has_from_list(items, self.player, 1))
                 elif level in locations.scrapyard_01_locations:
                     lvl_fmt = {level : locations.scrapyard_01_locations[level]}
                     region.add_locations(lvl_fmt, NuclearThroneLocation)
-                    self.multiworld.get_region(f"{names.sewers} - {required_items[0]}", 
+                    self.multiworld.get_region(f"{required_items[0]} - {names.sewers}", 
                                                self.player).connect(region, f"To {level}",
                         lambda state, items=items.weapons_tier_1: state.has_from_list(items, self.player, 7))
                 elif level in locations.scrapyard_02_locations:
                     lvl_fmt = {level : locations.scrapyard_02_locations[level]}
                     region.add_locations(lvl_fmt, NuclearThroneLocation)
-                    self.multiworld.get_region(f"{names.scrapyard_01} - {required_items[0]}", 
+                    self.multiworld.get_region(f"{required_items[0]} - {names.scrapyard_01}", 
                                                self.player).connect(region, f"To {level}")
                 elif level in locations.scrapyard_03_locations:
                     lvl_fmt = {level : locations.scrapyard_03_locations[level]}
                     region.add_locations(lvl_fmt, NuclearThroneLocation)
-                    self.multiworld.get_region(f"{names.scrapyard_02} - {required_items[0]}", 
+                    self.multiworld.get_region(f"{required_items[0]} - {names.scrapyard_02}", 
                                                self.player).connect(region, f"To {level}")
                 elif level in locations.caves_locations:
                     lvl_fmt = {level : locations.caves_locations[level]}
                     region.add_locations(lvl_fmt, NuclearThroneLocation)
-                    self.multiworld.get_region(f"{names.scrapyard_03} - {required_items[0]}", 
+                    self.multiworld.get_region(f"{required_items[0]} - {names.scrapyard_03}", 
                                                self.player).connect(region, f"To {level}",
                         lambda state, items=items.mutations_goal_list: state.has_from_list(items, self.player, 2))
                 elif level in locations.frozencity_01_locations:
                     lvl_fmt = {level : locations.frozencity_01_locations[level]}
                     region.add_locations(lvl_fmt, NuclearThroneLocation)
-                    self.multiworld.get_region(f"{names.caves} - {required_items[0]}", 
+                    self.multiworld.get_region(f"{required_items[0]} - {names.caves}", 
                                                self.player).connect(region, f"To {level}",
                         lambda state, items=items.weapons_tier_2: state.has_from_list(items, self.player, 7))
                 elif level in locations.frozencity_02_locations:
                     lvl_fmt = {level : locations.frozencity_02_locations[level]}
                     region.add_locations(lvl_fmt, NuclearThroneLocation)
-                    self.multiworld.get_region(f"{names.frozencity_01} - {required_items[0]}", 
+                    self.multiworld.get_region(f"{required_items[0]} - {names.frozencity_01}", 
                                                self.player).connect(region, f"To {level}")
                 elif level in locations.frozencity_03_locations:
                     lvl_fmt = {level : locations.frozencity_03_locations[level]}
                     region.add_locations(lvl_fmt, NuclearThroneLocation)
-                    self.multiworld.get_region(f"{names.frozencity_02} - {required_items[0]}", 
+                    self.multiworld.get_region(f"{required_items[0]} - {names.frozencity_02}", 
                                                self.player).connect(region, f"To {level}")
                 elif level in locations.labs_locations:
                     lvl_fmt = {level : locations.labs_locations[level]}
                     region.add_locations(lvl_fmt, NuclearThroneLocation)
-                    self.multiworld.get_region(f"{names.frozencity_03} - {required_items[0]}", 
+                    self.multiworld.get_region(f"{required_items[0]} - {names.frozencity_03}", 
                                                self.player).connect(region, f"To {level}",
                         lambda state, items=items.mutations_goal_list: state.has_from_list(items, self.player, 4))
                 elif level in locations.palace_01_locations:
                     lvl_fmt = {level : locations.palace_01_locations[level]}
                     region.add_locations(lvl_fmt, NuclearThroneLocation)
-                    self.multiworld.get_region(f"{names.labs} - {required_items[0]}", 
+                    self.multiworld.get_region(f"{required_items[0]} - {names.labs}", 
                                                self.player).connect(region, f"To {level}",
                         lambda state, items=items.weapons_tier_3: state.has_from_list(items, self.player, 7))
                 elif level in locations.palace_02_locations:
                     lvl_fmt = {level : locations.palace_02_locations[level]}
                     region.add_locations(lvl_fmt, NuclearThroneLocation)
-                    self.multiworld.get_region(f"{names.palace_01} - {required_items[0]}", 
+                    self.multiworld.get_region(f"{required_items[0]} - {names.palace_01}", 
                                                self.player).connect(region, f"To {level}")
                 elif level in locations.palace_03_locations:
                     lvl_fmt = {level : locations.palace_03_locations[level]}
                     region.add_locations(lvl_fmt, NuclearThroneLocation)
-                    self.multiworld.get_region(f"{names.palace_02} - {required_items[0]}", 
+                    self.multiworld.get_region(f"{required_items[0]} - {names.palace_02}", 
                                                self.player).connect(region, f"To {level}",
                         lambda state, items=items.weapons_tier_4: state.has_from_list(items, self.player, 7))
                     if self.options.goal.value == 0 or self.options.goal.value == 3:
                         goal_id = items.character_item_table[required_items[0]].index + 99900
-                        goal_name = f"GOAL - {required_items[0]}"
+                        goal_name = f"{required_items[0]} - GOAL"
                         region.add_locations({goal_name : goal_id}, NuclearThroneLocation)
                     if self.options.crownsanity.value:
                         region.add_locations(crown_runs[required_items[0]], NuclearThroneLocation)
                 elif level in locations.campfire_locations:
                     lvl_fmt = {level : locations.campfire_locations[level]}
                     region.add_locations(lvl_fmt, NuclearThroneLocation)
-                    self.multiworld.get_region(f"{names.palace_03} - {required_items[0]}", 
+                    self.multiworld.get_region(f"{required_items[0]} - {names.palace_03}", 
                                                self.player).connect(region, f"To {level}",
                         lambda state, items=items.mutations_goal_list: state.has_from_list(items, self.player, 7))
                     if self.options.goal.value == 4 or self.options.goal.value == 5:
                         goal_id = items.character_item_table[required_items[0]].index + 99900
-                        goal_name = f"GOAL - {required_items[0]}"
+                        goal_name = f"{required_items[0]} - GOAL"
                         region.add_locations({goal_name : goal_id}, NuclearThroneLocation)
                     if self.options.skinsanity.value:
                         region.add_locations(skin_runs[required_items[0]], NuclearThroneLocation)
                 elif level in locations.hq_01_locations:
                     lvl_fmt = {level : locations.hq_01_locations[level]}
                     region.add_locations(lvl_fmt, NuclearThroneLocation)
-                    self.multiworld.get_region(f"{names.campfire} - {required_items[0]}", 
+                    self.multiworld.get_region(f"{required_items[0]} - {names.campfire}", 
                                                self.player).connect(region, f"To {level}",
                         lambda state, items=items.mutations_goal_list: state.has_from_list(items, self.player, 7))
                 elif level in locations.hq_02_locations:
                     lvl_fmt = {level : locations.hq_02_locations[level]}
                     region.add_locations(lvl_fmt, NuclearThroneLocation)
-                    self.multiworld.get_region(f"{names.hq_01} - {required_items[0]}", 
+                    self.multiworld.get_region(f"{required_items[0]} - {names.hq_01}", 
                                                self.player).connect(region, f"To {level}")
                 elif level in locations.hq_03_locations:
                     lvl_fmt = {level : locations.hq_03_locations[level]}
                     region.add_locations(lvl_fmt, NuclearThroneLocation)
-                    self.multiworld.get_region(f"{names.hq_02} - {required_items[0]}", 
+                    self.multiworld.get_region(f"{required_items[0]} - {names.hq_02}", 
                                                self.player).connect(region, f"To {level}")
                     if self.options.goal.value == 1 or self.options.goal.value == 2:
                         goal_id = items.character_item_table[required_items[0]].index + 99900
-                        goal_name = f"GOAL - {required_items[0]}"
+                        goal_name = f"{required_items[0]} - GOAL"
                         region.add_locations({goal_name : goal_id}, NuclearThroneLocation)
                 elif level in locations.oasis_locations:
                     lvl_fmt = {level : locations.oasis_locations[level]}
                     region.add_locations(lvl_fmt, NuclearThroneLocation)
-                    self.multiworld.get_region(f"{names.desert_01} - {required_items[0]}", self.player).connect(region,
-                                    f"Oasis Skip - {required_items[0]}",
+                    self.multiworld.get_region(f"{required_items[0]} - {names.desert_01}", self.player).connect(region,
+                                    f"{required_items[0]} - Oasis Skip",
                         lambda state, items=items.weapons_tier_1: state.has_from_list(items, self.player, 7))
                 elif level in locations.pizzasewers_locations:
                     lvl_fmt = {level : locations.pizzasewers_locations[level]}
@@ -456,8 +456,8 @@ class NuclearThroneWorld(World):
                     if self.options.anarchy_mode.value:
                         required_wep.extend(anarchy_wep)
                     region.add_locations(lvl_fmt, NuclearThroneLocation)
-                    self.multiworld.get_region(f"{names.sewers} - {required_items[0]}", 
-                                    self.player).connect(region, f"Pizza Sewers Enter - {required_items[0]}",
+                    self.multiworld.get_region(f"{required_items[0]} - {names.sewers}", 
+                                    self.player).connect(region, f"{required_items[0]} - Pizza Sewers Enter",
                                         lambda state, items=required_wep: state.has_any(items, self.player))
                 elif level in locations.mansion_locations:
                     lvl_fmt = {level : locations.mansion_locations[level]}
@@ -466,27 +466,27 @@ class NuclearThroneWorld(World):
                     if self.options.anarchy_mode.value:
                         required_wep.extend(anarchy_wep)
                     region.add_locations(lvl_fmt, NuclearThroneLocation)
-                    self.multiworld.get_region(f"{names.scrapyard_01} - {required_items[0]}", 
-                                    self.player).connect(region, f"Mansion Enter - {required_items[0]}", 
+                    self.multiworld.get_region(f"{required_items[0]} - {names.scrapyard_01}", 
+                                    self.player).connect(region, f"{required_items[0]} - Mansion Enter", 
                                         lambda state, items=required_wep: state.has_any(items, self.player))
                 elif level in locations.cursedcaves_locations:
                     lvl_fmt = {level : locations.cursedcaves_locations[level]}
                     region.add_locations(lvl_fmt, NuclearThroneLocation)
-                    self.multiworld.get_region(f"{names.scrapyard_03} - {required_items[0]}", 
-                                    self.player).connect(region, f"Cursed Cave Enter - {required_items[0]}",
+                    self.multiworld.get_region(f"{required_items[0]} - {names.scrapyard_03}", 
+                                    self.player).connect(region, f"{required_items[0]} - Cursed Cave Enter",
                         lambda state, items=items.mutations_goal_list: state.has_from_list(items, self.player, 2))
                 elif level in locations.jungle_locations:
                     lvl_fmt = {level : locations.jungle_locations[level]}
                     region.add_locations(lvl_fmt, NuclearThroneLocation)
-                    self.multiworld.get_region(f"{names.frozencity_01} - {required_items[0]}",
-                                    self.player).connect(region, f"Jungle Enter - {required_items[0]}")
+                    self.multiworld.get_region(f"{required_items[0]} - {names.frozencity_01}",
+                                    self.player).connect(region, f"{required_items[0]} - Jungle Enter")
                 elif level in locations.vault_locations:
                     lvl_fmt = {level : locations.vault_locations[level]}
                     region.add_locations(lvl_fmt, NuclearThroneLocation)
-                    self.multiworld.get_region(f"{names.scrapyard_02} - {required_items[0]}", 
-                                    self.player).connect(region,  f"ScrapVault Enter - {required_items[0]}")
-                    self.multiworld.get_region(f"{names.frozencity_02} - {required_items[0]}", 
-                                    self.player).connect(region,   f"CityVault Enter - {required_items[0]}")
+                    self.multiworld.get_region(f"{required_items[0]} - {names.scrapyard_02}", 
+                                    self.player).connect(region,  f"{required_items[0]} - ScrapVault Enter")
+                    self.multiworld.get_region(f"{required_items[0]} - {names.frozencity_02}", 
+                                    self.player).connect(region,   f"{required_items[0]} - CityVault Enter")
                 self.multiworld.regions.append(region)         
 
     def set_rules(self) -> None:
