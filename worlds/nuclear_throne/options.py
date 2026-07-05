@@ -143,7 +143,7 @@ class CrownSanity(Toggle):
 class SkinSanity(Toggle):
     """
     Unlocking character skins become location checks.
-    Disables Starting Weapon and Starting Secondary options
+    Disables Starting Weapon and Starting Secondary options for Chicken and Steroids
     """
     display_name = "SkinSanity"
     default = False

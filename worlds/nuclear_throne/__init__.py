@@ -310,9 +310,6 @@ class NuclearThroneWorld(World):
 
         if self.options.goal.value == 5:
             self.options.crownsanity.value = True
-        if self.options.skinsanity.value:
-            self.options.starting_weapon.value = 0
-            self.options.starting_secondary.value = 0
 
         for char_run in nuclearthrone_runs:
             required_items = nuclearthrone_runs[char_run][0]
