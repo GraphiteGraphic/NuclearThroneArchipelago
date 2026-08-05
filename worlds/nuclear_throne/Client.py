@@ -162,7 +162,7 @@ class NuclearThroneContext(CommonContext):
         self.slot_data = None
         self.goal_number = 1
         self.goal_complete = 0
-        self.locations_scouted: List[int] = [102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113,
+        self.crown_locations: List[int] = [102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113,
                                              202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213,
                                              302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313,
                                              402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413,
@@ -218,6 +218,8 @@ class NuclearThroneContext(CommonContext):
             try:
                 self.slot_data = args["slot_data"]
                 self.goal_number = self.slot_data["goal_number"]
+                if self.slot_data["crownsanity"] == 1:
+                    Utils.async_start(self.send_msgs([{"cmd": "LocationScouts", "locations": list(self.crown_locations)}]))
                 logger.info("Connected and slot_data initialized")
                 self.http_task = asyncio.create_task(
                     run_http_server(self, self.http_port),
@@ -344,21 +346,22 @@ def create_http_app(ctx: NuclearThroneContext):
             return web.json_response({"error": "slot_data not initialized"}, status=503)
 
         ctx.slot_data["death_link"] = 1 if "DeathLink" in ctx.tags else 0
-        vault_hints = []
-        for loc in ctx.locations_info:
-            parts = []
-            player_name = f"{ctx.player_names[ctx.locations_info[loc].player]}'s " if ctx.locations_info[loc].player != ctx.slot else "YOUR "
-            if ctx.locations_info[loc].flags & 0x01:
-                player_name += "@p"
-            elif ctx.locations_info[loc].flags & 0x02:
-                player_name += "@b"
-            elif ctx.locations_info[loc].flags & 0x04:
-                player_name += "@r"
-            add_json_text(parts, player_name)
-            add_json_item(parts, ctx.locations_info[loc].item, ctx.locations_info[loc].player, ctx.locations_info[loc].flags)
-            msg = ctx.rawjsontotextparser(deepcopy(parts))
-            vault_hints.append((loc, msg))
-        ctx.slot_data["vault_hints"] = vault_hints
+        if ctx.slot_data["crownsanity"] == 1:
+            vault_hints = []
+            for loc in ctx.locations_info:
+                parts = []
+                player_name = f"{ctx.player_names[ctx.locations_info[loc].player]}'s " if ctx.locations_info[loc].player != ctx.slot else "YOUR "
+                if ctx.locations_info[loc].flags & 0x01:
+                    player_name += "@p"
+                elif ctx.locations_info[loc].flags & 0x02:
+                    player_name += "@b"
+                elif ctx.locations_info[loc].flags & 0x04:
+                    player_name += "@r"
+                add_json_text(parts, player_name)
+                add_json_item(parts, ctx.locations_info[loc].item, ctx.locations_info[loc].player, ctx.locations_info[loc].flags)
+                msg = ctx.rawjsontotextparser(deepcopy(parts))
+                vault_hints.append((loc, msg))
+            ctx.slot_data["vault_hints"] = vault_hints
         return web.json_response(ctx.slot_data)
 
     async def allitems(request):
