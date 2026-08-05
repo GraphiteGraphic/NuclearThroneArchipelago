@@ -3,7 +3,7 @@ import asyncio
 import Utils
 from copy import deepcopy
 from typing import List, Any, Optional
-from NetUtils import NetworkItem
+from NetUtils import NetworkItem, add_json_text, add_json_item
 from CommonClient import CommonContext, gui_enabled, ClientCommandProcessor, logger, get_base_parser, ClientStatus
 
 
@@ -162,6 +162,23 @@ class NuclearThroneContext(CommonContext):
         self.slot_data = None
         self.goal_number = 1
         self.goal_complete = 0
+        self.locations_scouted: List[int] = [102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113,
+                                             202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213,
+                                             302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313,
+                                             402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413,
+                                             502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513,
+                                             602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613,
+                                             702, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713,
+                                             802, 803, 804, 805, 806, 807, 808, 809, 810, 811, 812, 813,
+                                             902, 903, 904, 905, 906, 907, 908, 909, 910, 911, 912, 913,
+                                             1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011,
+                                             1012, 1013,
+                                             1102, 1103, 1104, 1105, 1106, 1107, 1108, 1109, 1110, 1111,
+                                             1112, 1113,
+                                             1202, 1203, 1204, 1205, 1206, 1207, 1208, 1209, 1210, 1211,
+                                             1212, 1213,
+                                             1602, 1603, 1604, 1605, 1606, 1607, 1608, 1609, 1610, 1611,
+                                             1612, 1613]
 
     async def server_auth(self, password_requested: bool = False):
         if password_requested and not self.password:
@@ -327,6 +344,21 @@ def create_http_app(ctx: NuclearThroneContext):
             return web.json_response({"error": "slot_data not initialized"}, status=503)
 
         ctx.slot_data["death_link"] = 1 if "DeathLink" in ctx.tags else 0
+        vault_hints = []
+        for loc in ctx.locations_info:
+            parts = []
+            player_name = f"{ctx.player_names[ctx.locations_info[loc].player]}'s " if ctx.locations_info[loc].player != ctx.slot else "YOUR "
+            if ctx.locations_info[loc].flags & 0x01:
+                player_name += "@p"
+            elif ctx.locations_info[loc].flags & 0x02:
+                player_name += "@b"
+            elif ctx.locations_info[loc].flags & 0x04:
+                player_name += "@r"
+            add_json_text(parts, player_name)
+            add_json_item(parts, ctx.locations_info[loc].item, ctx.locations_info[loc].player, ctx.locations_info[loc].flags)
+            msg = ctx.rawjsontotextparser(deepcopy(parts))
+            vault_hints.append((loc, msg))
+        ctx.slot_data["vault_hints"] = vault_hints
         return web.json_response(ctx.slot_data)
 
     async def allitems(request):
@@ -402,7 +434,6 @@ def create_http_app(ctx: NuclearThroneContext):
     app.router.add_get("/deathlink", deathlink_get)
     app.router.add_post("/location", location)
     app.router.add_post("/deathlink", deathlink_post)
-
     return app
 
 
