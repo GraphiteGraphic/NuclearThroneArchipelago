@@ -38,7 +38,7 @@ class StartingCharacter(Choice):
 class StartingWeapon(NamedRange):
     """
     Vanilla: Start the run with the default starting weapon
-    Random-Balanced: Start the run with a feasible weapon
+    Balanced-Random: Start the run with a feasible weapon
     Random: Start the run with a randomly determined non-golden weapon
     Custom ID: Start the run with a weapon based on ID value. 
         For example; putting in "1" will let you start off with a revolver on everyone. 
@@ -50,7 +50,7 @@ class StartingWeapon(NamedRange):
     default = 0
     special_range_names = {
         "vanilla": 0,
-        "random-balanced": -1,
+        "balanced-random": -1,
         "random": -2
     }
     
@@ -58,7 +58,7 @@ class StartingWeapon(NamedRange):
 class StartingSecondary(NamedRange):
     """
     Vanilla: Start your run with no secondary weapon
-    Random-Balanced: Start your run with a feasible weapon as your secondary
+    Balanced-Random: Start your run with a feasible weapon as your secondary
     Random: Start your run with a randomly determined non-golden weapon as your secondary.
     Custom ID: Start the run with a weapon based on ID value. 
         For example; putting in "1" will let you start off with a revolver on everyone. 
@@ -70,7 +70,7 @@ class StartingSecondary(NamedRange):
     default = 0
     special_range_names = {
         "vanilla": 0,
-        "random-balanced": -1,
+        "balanced-random": -1,
         "random": -2
     }
 
@@ -129,7 +129,7 @@ class AnarchyMode(Toggle):
     """
     display_name = "Anarchy Mode"
     default = False
-
+    
 
 class CrownSanity(Toggle):
     """
@@ -143,7 +143,7 @@ class CrownSanity(Toggle):
 class SkinSanity(Toggle):
     """
     Unlocking character skins become location checks.
-    Disables Starting Weapon and Starting Secondary options for Chicken and Steroids
+    Disables Starting Weapon and Starting Secondary options
     """
     display_name = "SkinSanity"
     default = False

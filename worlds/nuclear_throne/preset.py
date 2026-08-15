@@ -1,7 +1,6 @@
 from typing import Dict, Any
 
 beginner = {
-    "death_link": False,
     "goal": "throne",
     "starting_character": "default",
     "goal_number": 1,
@@ -11,10 +10,9 @@ beginner = {
 }
 
 random = {
-    "death_link": False,
     "goal": "random",
     "starting_character": "random",
-    "starting_weapon": "random-balanced",
+    "starting_weapon": "balanced-random",
     "starting_secondary": "random",
     "goal_number": "random",
     "anarchy_mode": True,
