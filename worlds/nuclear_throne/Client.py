@@ -430,6 +430,66 @@ def create_http_app(ctx: NuclearThroneContext):
             logger.warning(f"/deathlink error: {e}")
             return web.json_response({"error": "invalid request"}, status=400)
 
+    async def preloop_vaulthints(request):
+        try:
+            # Try JSON first
+            try:
+                data = await request.json()
+                char_id = data.get("char_id")
+                loop_num = data.get("loop_num")
+            except:
+                # Fallback: raw body
+                body = (await request.text()).strip()
+                parts = body.split(" ", 1)
+                if len(parts) != 2:
+                    raise ValueError("Invalid body format")
+                char_id, loop_num = parts
+
+            if char_id is None or loop_num is None:
+                raise ValueError("Missing char_id or loop_num")
+
+            crown_hints = []
+            for loc in ctx.crown_locations:
+                if loc // 100 == int(char_id) and loc % 100 in [3, 4, 5, 8, 11, 12]:
+                    crown_hints.append(loc)
+
+            Utils.async_start(ctx.send_msgs([{"cmd": "CreateHints", "locations": crown_hints}]))
+            return web.json_response({"received": {"char_id": char_id, "loop_num": loop_num}})
+
+        except Exception as e:
+            logger.warning(f"/preloopvaulthints error: {e}")
+            return web.json_response({"error": "invalid request"}, status=400)
+
+    async def postloop_vaulthints(request):
+        try:
+            # Try JSON first
+            try:
+                data = await request.json()
+                char_id = data.get("char_id")
+                loop_num = data.get("loop_num")
+            except:
+                # Fallback: raw body
+                body = (await request.text()).strip()
+                parts = body.split(" ", 1)
+                if len(parts) != 2:
+                    raise ValueError("Invalid body format")
+                char_id, loop_num = parts
+
+            if char_id is None or loop_num is None:
+                raise ValueError("Missing char_id or loop_num")
+
+            crown_hints = []
+            for loc in ctx.crown_locations:
+                if loc // 100 == int(char_id) and loc % 100 in [2, 6, 7, 9, 10, 13]:
+                    crown_hints.append(loc)
+
+            Utils.async_start(ctx.send_msgs([{"cmd": "CreateHints", "locations": crown_hints}]))
+            return web.json_response({"received": {"char_id": char_id, "loop_num": loop_num}})
+
+        except Exception as e:
+            logger.warning(f"/postloopvaulthints error: {e}")
+            return web.json_response({"error": "invalid request"}, status=400)
+
     app.router.add_get("/", root)
     app.router.add_get("/initialize", initialize)
     app.router.add_get("/allitems", allitems)
@@ -437,6 +497,8 @@ def create_http_app(ctx: NuclearThroneContext):
     app.router.add_get("/deathlink", deathlink_get)
     app.router.add_post("/location", location)
     app.router.add_post("/deathlink", deathlink_post)
+    app.router.add_post("/preloopvaulthints", preloop_vaulthints)
+    app.router.add_post("/postloopvaulthints", postloop_vaulthints)
     return app
 
 
