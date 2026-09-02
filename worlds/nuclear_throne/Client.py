@@ -487,7 +487,7 @@ async def run_http_server(ctx: NuclearThroneContext, local_port: int):
 
     ctx.http_server = runner
 
-    logger.info(f"Proxy server running")
+    logger.info(f"Proxy server running. Load/Reload Nuclear Throne Together mod now.")
 
     try:
         while True:
