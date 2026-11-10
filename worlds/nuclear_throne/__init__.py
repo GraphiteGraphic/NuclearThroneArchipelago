@@ -444,18 +444,22 @@ class NuclearThroneWorld(World):
                         lambda state, items=items.weapons_tier_1: state.has_from_list(items, self.player, 7))
                 elif level in locations.pizzasewers_locations:
                     lvl_fmt = {level : locations.pizzasewers_locations[level]}
-                    required_wep = [names.wep_grenade_launcher, names.wep_bazooka, names.wep_toxic_launcher]
-                    anarchy_wep = [names.wep_hyper_launcher, names.wep_heavy_grenade_launcher,
-                                   names.wep_grenade_rifle, names.wep_grenade_shotgun,
-                                   names.wep_auto_grenade_shotgun, names.wep_cluster_launcher,
-                                   names.wep_gatling_bazooka, names.wep_super_bazooka,
-                                   names.wep_nuke_launcher, names.wep_sticky_launcher]
-                    if self.options.anarchy_mode.value:
-                        required_wep.extend(anarchy_wep)
                     region.add_locations(lvl_fmt, NuclearThroneLocation)
-                    self.multiworld.get_region(f"{required_items[0]} - {names.sewers}", 
+                    if char_run != names.char_rogue:
+                        required_wep = [names.wep_grenade_launcher, names.wep_bazooka, names.wep_toxic_launcher]
+                        anarchy_wep = [names.wep_hyper_launcher, names.wep_heavy_grenade_launcher,
+                                       names.wep_grenade_rifle, names.wep_grenade_shotgun,
+                                       names.wep_auto_grenade_shotgun, names.wep_cluster_launcher,
+                                       names.wep_gatling_bazooka, names.wep_super_bazooka,
+                                       names.wep_nuke_launcher, names.wep_sticky_launcher]
+                        if self.options.anarchy_mode.value:
+                            required_wep.extend(anarchy_wep)
+                        self.multiworld.get_region(f"{required_items[0]} - {names.sewers}", 
                                     self.player).connect(region, f"{required_items[0]} - Pizza Sewers Enter",
                                         lambda state, items=required_wep: state.has_any(items, self.player))
+                    else:
+                        self.multiworld.get_region(f"{required_items[0]} - {names.sewers}", 
+                                    self.player).connect(region, f"{required_items[0]} - Pizza Sewers Enter")
                 elif level in locations.mansion_locations:
                     lvl_fmt = {level : locations.mansion_locations[level]}
                     required_wep = [names.wep_screwdriver]
